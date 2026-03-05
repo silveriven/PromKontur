@@ -58,3 +58,50 @@ document.addEventListener("click", (event) => {
     syncMenuState(false);
   }
 });
+
+/* =========================================
+ *  TRUST: Reveal cards on scroll
+ * ========================================= */
+const trustSection = document.querySelector(".trust");
+
+if (trustSection) {
+  if ("IntersectionObserver" in window) {
+    const trustObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          trustSection.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    trustObserver.observe(trustSection);
+  } else {
+    trustSection.classList.add("is-visible");
+  }
+}
+
+/* =========================================
+ *  MODELS: Horizontal carousel controls
+ * ========================================= */
+const modelsCarousel = document.querySelector("[data-models-carousel]");
+const modelsNavButtons = document.querySelectorAll("[data-models-nav]");
+
+if (modelsCarousel && modelsNavButtons.length) {
+  const scrollByViewport = (direction) => {
+    const step = modelsCarousel.clientWidth * 0.86;
+    modelsCarousel.scrollBy({
+      left: direction * step,
+      behavior: "smooth",
+    });
+  };
+
+  modelsNavButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const direction = button.getAttribute("data-models-nav") === "prev" ? -1 : 1;
+      scrollByViewport(direction);
+    });
+  });
+}
