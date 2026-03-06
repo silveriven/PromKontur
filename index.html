@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <!-- =========================================
+   *  DOCUMENT: Head / Meta / CSS
+   * ========================================= -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ПромКонтур — 3D-принтеры под ключ</title>
+
+  <link rel="preload" href="assets/hero/hero.webp" as="image" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+
+  <!-- =========================================
+   *  SECTION: Header
+   * ========================================= -->
+  <header class="site-header" id="top">
+    <div class="container header__content">
+
+      <a class="brand" href="#top" aria-label="ПромКонтур">
+        <img class="brand__logo" src="assets/brand/logo.svg" alt="ПромКонтур" />
+      </a>
+
+      <nav class="nav" id="primary-nav" aria-label="Основная навигация">
+        <!-- TODO: Replace placeholders with real routes/sections when blocks are ready -->
+        <a class="nav__link" href="#">Каталог</a>
+        <a class="nav__link" href="#">Доставка и оплата</a>
+        <a class="nav__link" href="#">Гарантия</a>
+        <a class="nav__link" href="#">Для бизнеса</a>
+        <a class="nav__link" href="#">Контакты</a>
+      </nav>
+
+      <div class="header__actions">
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+          aria-label="Открыть меню навигации"
+        >
+          <span class="nav-toggle__line"></span>
+          <span class="nav-toggle__line"></span>
+          <span class="nav-toggle__line"></span>
+        </button>
+        <a class="phone-pill" href="tel:+74951234567">+7 495 123-45-67</a>
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- =========================================
+   *  SECTION: Main
+   * ========================================= -->
+  <main>
+
+    <!-- =========================================
+     *  SECTION: Hero
+     * ========================================= -->
+    <section id="hero" class="hero" aria-label="Первый экран">
+      <div class="hero__bg" aria-hidden="true">
+        <img src="assets/hero/hero.webp" alt="" />
+      </div>
+
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="hero__neon" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="hero__content">
+          <p class="hero__kicker">Поставка 3D-принтеров под задачи бизнеса и производства</p>
+
+          <h1 class="hero__title">
+            3D-принтеры под ключ:
+            <br />
+            от подбора до запуска
+          </h1>
+
+          <p class="hero__subtitle">
+            Подберем модель под материалы и объем работ, организуем поставку и передадим
+            оборудование с базовой настройкой и инструктажем.
+          </p>
+
+          <ul class="hero__chips">
+            <li class="hero__chip">Подбор под задачи и бюджет</li>
+            <li class="hero__chip">Поставка и сроки под заказ</li>
+            <li class="hero__chip">Поддержка после покупки</li>
+          </ul>
+
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#">Подобрать принтер</a>
+            <a class="btn btn--secondary" href="#">Смотреть каталог</a>
+          </div>
+
+          <p class="hero__note">Ответим в течение 10–15 минут в рабочее время</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= SECTION: Trust ======================= -->
+    <section class="trust-scene" aria-label="Trust overlay scene">
+      <section class="trust" id="trust" aria-label="Почему нам доверяют поставку">
+        <div class="trust__overlay" aria-hidden="true"></div>
+        <div class="container trust__container">
+          <header class="trust__header">
+            <h2 class="trust__title">Почему нам доверяют поставку</h2>
+            <p class="trust__subtitle">ПромКонтур — поставка 3D-принтеров “под ключ”: фиксируем сроки, проверяем комплектацию, даём гарантию и остаёмся на связи после покупки.</p>
+          </header>
+
+          <div class="trust__grid">
+            <article class="trust-card" data-i="01">
+              <h3 class="trust-card__title">Сроки поставки</h3>
+              <p class="trust-card__text">25–45 дней под заказ. Контроль этапов до склада в Москве.</p>
+            </article>
+
+            <article class="trust-card" data-i="02">
+              <h3 class="trust-card__title">Склад в Москве</h3>
+              <p class="trust-card__text">Приёмка и отправка по России (СДЭК / ТК).</p>
+            </article>
+
+            <article class="trust-card" data-i="03">
+              <h3 class="trust-card__title">Гарантия производителя</h3>
+              <p class="trust-card__text">Официальная гарантия и сопровождение по вопросам сервиса.</p>
+            </article>
+
+            <article class="trust-card" data-i="04">
+              <h3 class="trust-card__title">Подбор под задачу</h3>
+              <p class="trust-card__text">Поможем выбрать модель под материалы, объём и бюджет.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </section>
+    <div class="ticker-line" aria-label="Сервисные преимущества">
+      <div class="ticker-line__track">
+        <span class="ticker-line__text">В НАЛИЧИИ • ГАРАНТИЯ 1 ГОД • TRADE-IN • ДОСТАВКА ПО РФ •</span>
+        <span class="ticker-line__text" aria-hidden="true">В НАЛИЧИИ • ГАРАНТИЯ 1 ГОД • TRADE-IN • ДОСТАВКА ПО РФ •</span>
+      </div>
+    </div>
+
+    <section class="models-scene" id="popular-models" aria-label="Популярные модели">
+      <div class="container">
+        <header class="models-scene__header">
+          <h2 class="models-scene__title">Популярные модели</h2>
+          <p class="models-scene__subtitle">Подборка принтеров, которые чаще всего выбирают для быстрого старта и стабильной печати в бизнес-задачах.</p>
+        </header>
+
+        <div class="models-scene__controls" aria-label="Навигация по карусели">
+          <button class="models-scene__nav models-scene__nav--prev" type="button" data-models-nav="prev" aria-label="Предыдущие модели">←</button>
+          <button class="models-scene__nav models-scene__nav--next" type="button" data-models-nav="next" aria-label="Следующие модели">→</button>
+        </div>
+
+        <div class="models-carousel" data-models-carousel>
+          <article class="model-card">
+            <img class="model-card__img" src="assets/models/creality-k1-max.webp" alt="Creality K1 Max" />
+            <h3 class="model-card__name">Creality K1 Max</h3>
+            <p class="model-card__highlight">Скорость и точность</p>
+            <p class="model-card__price">от 89 990 ₽</p>
+            <a class="model-card__btn" href="#">Подробнее</a>
+          </article>
+
+          <article class="model-card">
+            <img class="model-card__img" src="assets/models/bambu-x1c.webp" alt="Bambu Lab X1 Carbon" />
+            <h3 class="model-card__name">Bambu Lab X1 Carbon</h3>
+            <p class="model-card__highlight">Печать инженерными пластиками</p>
+            <p class="model-card__price">от 159 990 ₽</p>
+            <a class="model-card__btn" href="#">Подробнее</a>
+          </article>
+
+          <article class="model-card">
+            <img class="model-card__img" src="assets/models/anycubic-kobra-3.webp" alt="Anycubic Kobra 3 Combo" />
+            <h3 class="model-card__name">Anycubic Kobra 3 Combo</h3>
+            <p class="model-card__highlight">Цветная печать в одном цикле</p>
+            <p class="model-card__price">от 74 990 ₽</p>
+            <a class="model-card__btn" href="#">Подробнее</a>
+          </article>
+
+          <article class="model-card">
+            <img class="model-card__img" src="assets/models/qidi-plus-4.webp" alt="QIDI Plus4" />
+            <h3 class="model-card__name">QIDI Plus4</h3>
+            <p class="model-card__highlight">Закрытая камера для ABS/PA</p>
+            <p class="model-card__price">от 129 990 ₽</p>
+            <a class="model-card__btn" href="#">Подробнее</a>
+          </article>
+
+          <article class="model-card">
+            <img class="model-card__img" src="assets/models/flashforge-5m-pro.webp" alt="Flashforge Adventurer 5M Pro" />
+            <h3 class="model-card__name">Adventurer 5M Pro</h3>
+            <p class="model-card__highlight">Тихая и быстрая офисная печать</p>
+            <p class="model-card__price">от 99 990 ₽</p>
+            <a class="model-card__btn" href="#">Подробнее</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- =========================================
+   *  SECTION: Footer
+   * ========================================= -->
+  <footer class="site-footer">
+    <div class="container footer__content">
+      <span>© 2026 ПромКонтур</span>
+
+      <nav class="footer__links" aria-label="Юридическая информация">
+        <a href="#">Политика</a>
+        <a href="#">Cookies</a>
+        <a href="#">Реквизиты</a>
+      </nav>
+    </div>
+  </footer>
+
+
+  <!-- =========================================
+   *  SECTION: Scripts
+   * ========================================= -->
+  <script src="js/main.js" defer></script>
+</body>
+</html>
