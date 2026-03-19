@@ -589,9 +589,80 @@ if (productTabsRoot) {
   });
 
   const initialActiveButton = tabButtons.find((button) => button.classList.contains("is-active")) || tabButtons[0];
-  if (initialActiveButton) {
-    activateProductTab(initialActiveButton.getAttribute("data-product-tab"));
+if (initialActiveButton) {
+  activateProductTab(initialActiveButton.getAttribute("data-product-tab"));
   }
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    // 1. Проверяем, есть ли уже запись в памяти браузера
+    if (!localStorage.getItem("promcontur_cookie_accepted")) {
+        
+        // 2. Создаем контейнер для баннера
+        const cookieBanner = document.createElement("div");
+        cookieBanner.id = "system-cookie-banner";
+        
+        // 3. Задаем жесткие стили (Glassmorphism, темная тема)
+        cookieBanner.style.cssText = `
+            position: fixed !important;
+            bottom: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            background-color: rgba(15, 15, 15, 0.95) !important;
+            backdrop-filter: blur(10px) !important;
+            -webkit-backdrop-filter: blur(10px) !important;
+            border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+            padding: 16px 24px !important;
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            flex-wrap: wrap !important;
+            gap: 16px !important;
+            z-index: 2147483647 !important; /* Максимально возможный z-index */
+            box-sizing: border-box !important;
+            font-family: inherit !important;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.5) !important;
+        `;
+
+        // 4. Вставляем текст и кнопку
+        cookieBanner.innerHTML = `
+            <div style="flex: 1 1 280px; font-size: 14px; line-height: 1.5; color: #e0e0e0; margin: 0;">
+                Мы используем файлы cookie для улучшения работы сайта и аналитики. Продолжая работу, вы соглашаетесь с нашей 
+                <a href="/privacy.html" style="color: #ffffff; text-decoration: underline; transition: color 0.3s;">Политикой конфиденциальности</a>.
+            </div>
+            <button id="cookie-accept-btn" style="
+                background-color: #e50020; 
+                color: #ffffff; 
+                border: none; 
+                padding: 12px 28px; 
+                border-radius: 6px; 
+                cursor: pointer; 
+                font-size: 14px;
+                font-weight: 600; 
+                white-space: nowrap;
+                transition: background-color 0.3s;
+                margin: 0;
+            ">Понятно, принять</button>
+        `;
+
+        // 5. Выводим баннер на экран
+        document.body.appendChild(cookieBanner);
+
+        // 6. Логика кнопки "Принять"
+        const acceptBtn = document.getElementById("cookie-accept-btn");
+        
+        // Эффект наведения для кнопки (т.к. псевдоклассы не работают в inline-стилях)
+        acceptBtn.addEventListener("mouseenter", () => acceptBtn.style.backgroundColor = "#c4001a");
+        acceptBtn.addEventListener("mouseleave", () => acceptBtn.style.backgroundColor = "#e50020");
+
+        // Обработка клика
+        acceptBtn.addEventListener("click", function() {
+            localStorage.setItem("promcontur_cookie_accepted", "true");
+            cookieBanner.style.opacity = "0";
+            cookieBanner.style.transition = "opacity 0.4s ease";
+            setTimeout(() => cookieBanner.remove(), 400); // Плавное исчезновение
+        });
+    }
+});
 
 
