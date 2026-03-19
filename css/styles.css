@@ -3895,65 +3895,6 @@ body.no-scroll {
   text-decoration-color: rgba(255, 255, 255, 0.8);
 }
 
-.cookie-banner {
-  position: fixed;
-  left: 24px;
-  right: 24px;
-  bottom: 24px;
-  z-index: 120;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-  max-width: 880px;
-  margin: 0 auto;
-  padding: 18px 20px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 22px;
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04)),
-    rgba(12, 14, 18, 0.82);
-  box-shadow:
-    0 24px 60px rgba(0, 0, 0, 0.34),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(18px);
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transform: translateY(18px);
-  transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
-}
-
-.cookie-banner.is-visible {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-  transform: translateY(0);
-}
-
-.cookie-banner p {
-  margin: 0;
-  color: rgba(255, 255, 255, 0.82);
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-.cookie-banner a {
-  color: #ffffff;
-  text-decoration: underline;
-  text-decoration-color: rgba(255, 255, 255, 0.42);
-  text-underline-offset: 3px;
-}
-
-.cookie-banner a:hover {
-  text-decoration-color: rgba(255, 255, 255, 0.84);
-}
-
-.cookie-banner .btn {
-  flex: 0 0 auto;
-  min-width: 128px;
-}
-
 @media (max-width: 1024px) {
   .b2b-highlights__grid,
   .b2b-requisites__grid {
@@ -3987,23 +3928,6 @@ body.no-scroll {
     line-height: 1.72;
   }
 }
-
-@media (max-width: 820px) {
-  .cookie-banner {
-    left: 16px;
-    right: 16px;
-    bottom: 16px;
-    flex-direction: column;
-    align-items: stretch;
-    padding: 16px;
-    border-radius: 18px;
-  }
-
-  .cookie-banner .btn {
-    width: 100%;
-  }
-}
-
 
 /* =========================================
  *  CONTACTS PAGE

@@ -594,36 +594,4 @@ if (productTabsRoot) {
   }
 }
 
-/* =========================================
- *  COOKIE: Consent banner
- * ========================================= */
-const cookieBanner = document.getElementById("cookie-banner");
-const acceptCookiesButton = document.getElementById("accept-cookies");
-const cookieConsentKey = "cookieAccepted";
-
-if (cookieBanner && acceptCookiesButton) {
-  let hasCookieConsent = false;
-
-  try {
-    hasCookieConsent = window.localStorage.getItem(cookieConsentKey) === "true";
-  } catch (error) {
-    hasCookieConsent = false;
-  }
-
-  if (!hasCookieConsent) {
-    cookieBanner.classList.add("is-visible");
-  }
-
-  acceptCookiesButton.addEventListener("click", () => {
-    try {
-      window.localStorage.setItem(cookieConsentKey, "true");
-    } catch (error) {
-      // Ignore storage write errors and still hide the banner for the session.
-    }
-
-    cookieBanner.classList.remove("is-visible");
-  });
-}
-
-
 
