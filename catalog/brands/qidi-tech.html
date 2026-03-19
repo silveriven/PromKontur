@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QIDI Tech | PromKontur 3D</title>
+  <link rel="stylesheet" href="../../css/styles.css" />
+  <link rel="stylesheet" href="../../css/catalog.css" />
+</head>
+<body class="catalog-page">
+  <header class="site-header header" id="top">
+    <div class="header__top-bar">
+      <div class="header__container header__container--top">
+        <div class="header__top-side" aria-hidden="true"></div>
+
+        <form class="header__search" action="../index.html" method="get" role="search">
+          <label class="header__search-label" for="header-search-qidi">Поиск по каталогу</label>
+          <input
+            class="header__search-input"
+            id="header-search-qidi"
+            type="search"
+            name="q"
+            placeholder="Поиск по каталогу"
+            autocomplete="off"
+          />
+        </form>
+        <div class="header__phones">
+          <a class="header__phone" href="tel:+79311080940">+7 (931) 108-09-40</a>
+          <a class="header__phone" href="tel:+79664455233">+7 (966) 445-52-33</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="header__main-nav">
+      <div class="header__container header__container--main">
+        <a class="header__logo" href="../../index.html">
+            <img class="header__logo-img" src="../../assets/brand/logo.png" alt="ПромКонтур" />
+        </a>
+
+        <nav class="header__nav" id="primary-nav" aria-label="Основная навигация">
+          <ul class="header__nav-list">
+            <li class="header__menu-item header__menu-item--catalog" data-catalog-menu>
+              <a
+                class="header__link"
+                href="../index.html"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="header-catalog-dropdown"
+                data-catalog-menu-trigger
+                aria-current="page"
+              >
+                Каталог
+              </a>
+
+              <div
+                class="header__mega-menu mega-menu"
+                id="header-catalog-dropdown"
+                data-catalog-menu-dropdown
+              >
+                <div class="mega-menu__list" aria-label="Бренды каталога">
+                  <a class="mega-menu__link" href="./bambu-lab.html" data-preview="../../assets/preview/preview-bambu.png">Bambu Lab</a>
+                  <a class="mega-menu__link" href="../index.html" data-preview="../../assets/preview/preview-all.png">Все товары</a>
+                </div>
+
+                <div class="mega-menu__visual">
+                  <img id="mega-menu-img" src="../../assets/preview/preview-qidi.png" alt="Превью бренда" />
+                </div>
+              </div>
+            </li>
+
+            <li class="header__menu-item">
+              <a class="header__link" href="../../delivery.html">Доставка и оплата</a>
+            </li>
+            <li class="header__menu-item">
+              <a class="header__link" href="../../about.html">О компании</a>
+            </li>
+            <li class="header__menu-item">
+              <a class="header__link" href="../../b2b.html">Для юр. лиц</a>
+            </li>
+            <li class="header__menu-item">
+              <a class="header__link" href="../../contacts.html">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <div class="catalog-layout container">
+    <aside class="catalog-sidebar">
+      <p class="catalog-sidebar__eyebrow">Каталог</p>
+      <h2 class="catalog-sidebar__title">Бренды</h2>
+      <p class="catalog-sidebar__text">Выберите производителя и перейдите к нужной линейке оборудования.</p>
+
+      <nav aria-label="Бренды каталога">
+        <ul class="catalog-sidebar__list">
+          <li><a class="catalog-sidebar__link" href="../index.html">Все товары</a></li>
+          <li><a class="catalog-sidebar__link" href="./bambu-lab.html">Bambu Lab</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="catalog-main">
+      <section class="brand-card" aria-labelledby="brand-title">
+        <div class="brand-card__content">
+          <p class="brand-card__eyebrow">QIDI Tech</p>
+          <h1 class="brand-card__title" id="brand-title">QIDI Tech для закрытой инженерной печати и стабильной работы с техническими пластиками</h1>
+          <p class="brand-card__text">Решения QIDI Tech подходят для команд, которым важны термостабильность, закрытая камера и уверенная печать на ABS, ASA и нейлоновых компаундах.</p>
+          <p class="brand-card__text">Бренд хорошо вписывается в контур опытного производства и прикладного R&amp;D, где важны повторяемость результата и быстрое масштабирование рабочих процессов.</p>
+        </div>
+
+        <div class="brand-card__visual">
+          <img class="brand-card__logo" src="../../assets/Logo/QIDI.png" alt="Логотип QIDI Tech" />
+        </div>
+      </section>
+
+      <section class="brand-products" aria-labelledby="brand-products-title">
+        <div class="brand-products__header">
+          <div>
+            <p class="brand-products__eyebrow">Модели бренда</p>
+            <h2 class="brand-products__title" id="brand-products-title">Оборудование QIDI Tech</h2>
+          </div>
+          <p class="brand-products__text">Подберём платформу под температурный режим, размер деталей и требования к повторяемости печати.</p>
+        </div>
+
+        <div class="brand-products__grid">
+          <a class="product-card" href="../products/qidi-q1-production.html">
+            <span class="product-card__badge">QIDI Tech</span>
+            <div class="product-card__media">
+              <img class="product-card__img" src="../../assets/preview/preview-qidi.png" alt="3D-принтер QIDI Q1 Production" />
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">Q1 Production</h3>
+              <p class="product-card__description">Закрытая инженерная модель для серийных задач, стабильной печати и прикладных производственных циклов.</p>
+              <p class="product-card__price">Цена по запросу</p>
+              <span class="product-card__button">Узнать цену и сроки</span>
+            </div>
+          </a>
+
+          <article class="product-card">
+            <span class="product-card__badge">QIDI Tech</span>
+            <div class="product-card__media">
+              <img class="product-card__img" src="../../assets/preview/preview-qidi.png" alt="3D-принтер QIDI Plus4" />
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">Plus4</h3>
+              <p class="product-card__description">Система для инженерных материалов, когда нужен баланс между скоростью запуска и дисциплиной производственной печати.</p>
+              <p class="product-card__price">Подбор конфигурации</p>
+              <span class="product-card__button">Запросить консультацию</span>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container site-footer__shell">
+      <div class="site-footer__grid">
+        <div class="site-footer__column">
+          <p class="site-footer__brand">ПромКонтур</p>
+          <p class="site-footer__text">Прямые поставки 3D-принтеров Bambu Lab.</p>
+          <p class="site-footer__meta"><strong>Адрес отгрузки:</strong> Московская область, пгт Отрадное, ул. Лесная, 19к4.</p>
+          <div class="site-footer__contacts">
+            <a class="site-footer__contact" href="tel:+79311080940"><span>Розница</span>+7 (931) 108-09-40</a>
+            <a class="site-footer__contact" href="tel:+79664455233"><span>B2B</span>+7 (966) 445-52-33</a>
+            <a class="site-footer__contact" href="mailto:info@promcontur3d.ru"><span>Email</span>info@promcontur3d.ru</a>
+          </div>
+        </div>
+
+        <div class="site-footer__column">
+          <p class="site-footer__heading">Клиентам</p>
+          <nav aria-label="Навигация в футере">
+            <ul class="site-footer__list">
+              <li><a href="../../about.html">О компании</a></li>
+              <li><a href="./bambu-lab.html">Каталог Bambu Lab</a></li>
+              <li><a href="../../delivery.html">Доставка и оплата</a></li>
+              <li><a href="../../b2b.html">Для юр. лиц</a></li>
+              <li><a href="../../contacts.html">Контакты</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="site-footer__column">
+          <p class="site-footer__heading">Основной канал продаж</p>
+          <p class="site-footer__sales-copy">Быстрые консультации, подбор моделей и оформление розничных заказов.</p>
+          <a class="btn btn--primary site-footer__button" href="https://www.avito.ru/brands/c82497fec853ab882ce5f43a5220d608/all/orgtehnika_i_rashodniki?src=search_seller_info&amp;iid=7861839904&amp;sellerId=5f34061994b7ad334893f6affe93d929" target="_blank" rel="noopener noreferrer">Перейти на Авито</a>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <p class="site-footer__legal">&copy; 2026 ПромКонтур. ИП Смелов Г. В. (ИНН 771573832533)</p>
+        <div class="site-footer__bottom-links">
+          <a href="../../privacy.html">Политика конфиденциальности</a>
+          <a href="../../b2b.html#requisites">Реквизиты</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookie-banner" id="cookie-banner" aria-live="polite">
+    <p>Мы используем файлы cookie для улучшения работы сайта и аналитики. Продолжая использовать сайт, вы соглашаетесь с нашей <a href="../../privacy.html">Политикой конфиденциальности</a>.</p>
+    <button class="btn btn--red" id="accept-cookies" type="button">Принять</button>
+  </div>
+
+  <script src="../../js/main.js" defer></script>
+  <script src="../../js/catalog.js" defer></script>
+</body>
+</html>

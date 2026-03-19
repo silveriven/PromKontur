@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ПромКонтур — 3D-принтеры под ключ</title>
+
+  <link rel="preload" href="assets/hero/hero.webp" as="image" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+
+  <!-- =========================================
+   *  SECTION: Header
+   * ========================================= -->
+  <header class="site-header header" id="top">
+    <div class="header__top-bar">
+      <div class="header__container header__container--top">
+        <div class="header__top-side" aria-hidden="true"></div>
+
+        <form class="header__search" action="catalog/index.html" method="get" role="search">
+          <label class="header__search-label" for="header-search">Поиск по каталогу</label>
+          <input
+            class="header__search-input"
+            id="header-search"
+            type="search"
+            name="q"
+            placeholder="Поиск по каталогу"
+            autocomplete="off"
+          />
+        </form>
+        <div class="header__phones">
+          <a class="header__phone" href="tel:+79311080940">+7 (931) 108-09-40</a>
+          <a class="header__phone" href="tel:+79664455233">+7 (966) 445-52-33</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="header__main-nav">
+      <div class="header__container header__container--main">
+        <a class="header__logo" href="index.html">
+            <img class="header__logo-img" src="assets/brand/logo.png" alt="ПромКонтур" />
+        </a>
+
+        <nav class="header__nav" id="primary-nav" aria-label="Основная навигация">
+          <ul class="header__nav-list">
+            <li class="header__menu-item header__menu-item--catalog" data-catalog-menu>
+              <a
+                class="header__link"
+                href="catalog/index.html"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="header-catalog-dropdown"
+                data-catalog-menu-trigger
+              >
+                Каталог
+              </a>
+
+              <div
+                class="header__mega-menu mega-menu"
+                id="header-catalog-dropdown"
+                data-catalog-menu-dropdown
+              >
+                <div class="mega-menu__list" aria-label="Бренды каталога">
+                  <a class="mega-menu__link" href="catalog/brands/bambu-lab.html" data-preview="assets/preview/preview-bambu.png">Bambu Lab</a>
+                  <a class="mega-menu__link" href="catalog/index.html" data-preview="assets/preview/preview-all.png">Все товары</a>
+                </div>
+
+                <div class="mega-menu__visual">
+                  <img id="mega-menu-img" src="assets/preview/preview-bambu.png" alt="Preview" />
+                </div>
+              </div>
+            </li>
+
+            <li class="header__menu-item">
+              <a class="header__link" href="delivery.html">Доставка и оплата</a>
+            </li>
+            <li class="header__menu-item">
+              <a class="header__link" href="about.html">О компании</a>
+            </li>
+            <li class="header__menu-item">
+              <a class="header__link" href="b2b.html">Для юр. лиц</a>
+            </li>
+            <li class="header__menu-item">
+              <a class="header__link" href="contacts.html">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- =========================================
+   *  SECTION: Main
+   * ========================================= -->
+  <main>
+
+    <!-- =========================================
+     *  SECTION: Hero
+     * ========================================= -->
+    <section id="hero" class="hero" aria-label="Первый экран">
+      <div class="hero__bg" aria-hidden="true">
+        <img src="assets/hero/hero.webp" alt="" />
+      </div>
+
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="hero__neon" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="hero__content">
+          <p class="hero__kicker">Подбор 3D-принтеров под задачи бизнеса и производства</p>
+
+          <h1 class="hero__title">
+            3D-принтеры под ключ:
+            <br />
+            от подбора до запуска
+          </h1>
+
+          <p class="hero__subtitle">
+            Подберем модель под материалы и объем работ и передадим
+            оборудование с базовой настройкой и инструктажем.
+          </p>
+
+          <ul class="hero__chips">
+            <li class="hero__chip">Подбор под задачи и бюджет</li>
+            <li class="hero__chip">Поставка и сроки под заказ</li>
+            <li class="hero__chip">Поддержка после покупки</li>
+          </ul>
+
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#quiz-modal" data-modal="quiz-modal">Подобрать принтер и узнать цену</a>
+            <a class="btn btn--secondary" href="catalog/index.html">Смотреть каталог</a>
+          </div>
+
+          <p class="hero__note">Ответим в течение 10–15 минут в рабочее время</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+     *  SECTION: Trust / Features
+     * ========================================= -->
+    <section class="trust-scene" aria-label="Trust overlay scene">
+      <section class="trust" id="trust" aria-label="Почему нам доверяют поставку">
+        <div class="trust__overlay" aria-hidden="true"></div>
+        <div class="container trust__container">
+          <header class="trust__header">
+            <h2 class="trust__title">Почему выбирают ПромКонтур</h2>
+            <p class="trust__subtitle">Профессиональное внедрение аддитивных технологий: от инженерного подбора до запуска на вашем производстве с гарантией лучшей цены.</p>
+          </header>
+
+          <div class="trust__grid">
+            <article class="trust-card" data-i="01">
+              <div class="trust-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M7.5 7h8.5a2 2 0 0 1 2 2v7.5a2 2 0 0 1-2 2H7.5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z"></path>
+                  <path d="M9 7V5.75A1.75 1.75 0 0 1 10.75 4h2.5A1.75 1.75 0 0 1 15 5.75V7"></path>
+                  <path d="M9 12h6"></path>
+                </svg>
+              </div>
+              <h3 class="trust-card__title">Прямые цены</h3>
+              <p class="trust-card__text">Готовим коммерческое предложение без лишних посреднических наценок, чтобы вы сравнивали модели по реальной стоимости внедрения.</p>
+            </article>
+
+            <article class="trust-card" data-i="02">
+              <div class="trust-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 5.5a4 4 0 1 1 0 8a4 4 0 0 1 0-8Z"></path>
+                  <path d="M5 19.25a7 7 0 0 1 14 0"></path>
+                  <path d="M18.75 7.75h2.75"></path>
+                  <path d="M20.125 6.375v2.75"></path>
+                </svg>
+              </div>
+              <h3 class="trust-card__title">Экспертная консультация</h3>
+              <p class="trust-card__text">Помогаем выбрать конфигурацию под материалы, производственную нагрузку и требования к точности, а не просто рекомендуем популярную модель.</p>
+            </article>
+
+            <article class="trust-card" data-i="03">
+              <div class="trust-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 3.75 18.25 6v5.5c0 4.1-2.62 7.34-6.25 8.75-3.63-1.41-6.25-4.65-6.25-8.75V6L12 3.75Z"></path>
+                  <path d="m9.75 12.25 1.55 1.55 3.2-3.55"></path>
+                </svg>
+              </div>
+              <h3 class="trust-card__title">Контроль качества в Москве</h3>
+              <p class="trust-card__text">Проверяем комплектацию, состояние узлов и готовность оборудования на московской площадке перед передачей клиенту.</p>
+            </article>
+
+            <article class="trust-card" data-i="04">
+              <div class="trust-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M6.75 8.25h10.5"></path>
+                  <path d="M6.75 12h6.5"></path>
+                  <path d="M6.75 15.75h8.5"></path>
+                  <path d="M17.25 5.75h-10.5A1.75 1.75 0 0 0 5 7.5v9A1.75 1.75 0 0 0 6.75 18.25h10.5A1.75 1.75 0 0 0 19 16.5v-9a1.75 1.75 0 0 0-1.75-1.75Z"></path>
+                </svg>
+              </div>
+              <h3 class="trust-card__title">Сопровождение после выбора</h3>
+              <p class="trust-card__text">Остаёмся в проекте после покупки: помогаем с запуском, первой настройкой и вопросами эксплуатации оборудования.</p>
+            </article>
+          </div>
+
+          <div class="trust__cta">
+            <a class="btn btn--primary trust__button" href="#consult-modal" data-modal="consult-modal">Получить консультацию</a>
+          </div>
+        </div>
+      </section>
+    </section>
+    <div class="ticker-line" aria-label="Сервисные преимущества">
+      <div class="ticker-line__track">
+        <span class="ticker-line__text">• ЦЕНЫ ОТ ПРОИЗВОДИТЕЛЯ • ПРОВЕРКА КАЖДОГО ПРИНТЕРА В МОСКВЕ • ИНЖЕНЕРНЫЙ ПОДБОР ПОД ЗАДАЧИ • ГАРАНТИЯ ПРОИЗВОДИТЕЛЯ • В НАЛИЧИИ •</span>
+        <span class="ticker-line__text" aria-hidden="true">• ЦЕНЫ ОТ ПРОИЗВОДИТЕЛЯ • ПРОВЕРКА КАЖДОГО ПРИНТЕРА В МОСКВЕ • ИНЖЕНЕРНЫЙ ПОДБОР ПОД ЗАДАЧИ • ГАРАНТИЯ И СЕРВИС • В НАЛИЧИИ •</span>
+      </div>
+    </div>
+
+    <!-- =========================================
+     *  SECTION: Quiz / Form
+     * ========================================= -->
+    <section class="quiz-modal" id="quiz-modal" aria-hidden="true">
+      <div class="quiz-modal__backdrop" data-modal-close></div>
+      <div class="quiz-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="quiz-title">
+        <button class="quiz-modal__close" type="button" aria-label="Закрыть квиз" data-modal-close>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="quiz-modal__progress" aria-hidden="true">
+          <span class="quiz-modal__progress-bar" data-quiz-progress></span>
+        </div>
+
+        <div class="quiz-modal__intro">
+          <p class="quiz-modal__eyebrow">Подбор за 1 минуту</p>
+          <h2 class="quiz-modal__title" id="quiz-title">Подберём 3D-принтер под вашу задачу и отправим подборку в Telegram</h2>
+        </div>
+
+        <form class="quiz-form" data-quiz-form action="/send.php" method="POST" novalidate>
+          <div class="quiz-form__steps">
+            <section class="quiz-step is-active" data-quiz-step="0" data-quiz-name="task">
+              <div class="quiz-step__head">
+                <p class="quiz-step__index">Шаг 1 из 5</p>
+                <h3 class="quiz-step__title">Для какой задачи нужен принтер?</h3>
+              </div>
+              <div class="quiz-step__options">
+                <label class="quiz-option">
+                  <input class="quiz-option__control" type="radio" name="task" value="Прототипирование" />
+                  <span class="quiz-option__surface">
+                    <span class="quiz-option__icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M12 3.75 5.75 7v10L12 20.25 18.25 17V7L12 3.75Z"></path>
+                        <path d="M12 12.2 5.75 7"></path>
+                        <path d="M12 12.2 18.25 7"></path>
+                        <path d="M12 20.25V12.2"></path>
+                      </svg>
+                    </span>
+                    <span class="quiz-option__text">Прототипирование</span>
+                  </span>
+                </label>
+                <label class="quiz-option">
+                  <input class="quiz-option__control" type="radio" name="task" value="Производство" />
+                  <span class="quiz-option__surface">
+                    <span class="quiz-option__icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M4.75 18.25h14.5"></path>
+                        <path d="M6.5 18.25v-7.5l5.5-3.5 5.5 3.5v7.5"></path>
+                        <path d="M9.25 18.25v-4.5h5.5v4.5"></path>
+                      </svg>
+                    </span>
+                    <span class="quiz-option__text">Производство</span>
+                  </span>
+                </label>
+                <label class="quiz-option">
+                  <input class="quiz-option__control" type="radio" name="task" value="Образование" />
+                  <span class="quiz-option__surface">
+                    <span class="quiz-option__icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <path d="m4.75 8.5 7.25-3.75 7.25 3.75-7.25 3.75L4.75 8.5Z"></path>
+                        <path d="M7.75 10.05v4.45c0 .83 1.9 2.25 4.25 2.25s4.25-1.42 4.25-2.25v-4.45"></path>
+                      </svg>
+                    </span>
+                    <span class="quiz-option__text">Образование</span>
+                  </span>
+                </label>
+                <label class="quiz-option">
+                  <input class="quiz-option__control" type="radio" name="task" value="Хобби" />
+                  <span class="quiz-option__surface">
+                    <span class="quiz-option__icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M12 19.25s-6.25-3.68-6.25-9a3.75 3.75 0 0 1 6.25-2.8 3.75 3.75 0 0 1 6.25 2.8c0 5.32-6.25 9-6.25 9Z"></path>
+                      </svg>
+                    </span>
+                    <span class="quiz-option__text">Хобби</span>
+                  </span>
+                </label>
+              </div>
+            </section>
+
+            <section class="quiz-step" data-quiz-step="1" data-quiz-name="material">
+              <div class="quiz-step__head">
+                <p class="quiz-step__index">Шаг 2 из 5</p>
+                <h3 class="quiz-step__title">С какими материалами планируете работать?</h3>
+              </div>
+              <div class="quiz-step__options">
+                <label class="quiz-option"><input class="quiz-option__control" type="radio" name="material" value="Базовые (PLA/PETG)" /><span class="quiz-option__surface"><span class="quiz-option__text">Базовые (PLA/PETG)</span></span></label>
+                <label class="quiz-option"><input class="quiz-option__control" type="radio" name="material" value="Инженерные (ABS/ASA/Nylon)" /><span class="quiz-option__surface"><span class="quiz-option__text">Инженерные (ABS/ASA/Nylon)</span></span></label>
+                <label class="quiz-option"><input class="quiz-option__control" type="radio" name="material" value="Фотополимеры" /><span class="quiz-option__surface"><span class="quiz-option__text">Фотополимеры</span></span></label>
+                <label class="quiz-option"><input class="quiz-option__control" type="radio" name="material" value="Композиты" /><span class="quiz-option__surface"><span class="quiz-option__text">Композиты</span></span></label>
+              </div>
+            </section>
+
+            <section class="quiz-step" data-quiz-step="2" data-quiz-name="volume">
+              <div class="quiz-step__head">
+                <p class="quiz-step__index">Шаг 3 из 5</p>
+                <h3 class="quiz-step__title">Какой рабочий объем нужен?</h3>
+              </div>
+              <div class="quiz-step__options">
+                <label class="quiz-option"><input class="quiz-option__control" type="radio" name="volume" value="До 250 мм" /><span class="quiz-option__surface"><span class="quiz-option__text">До 250 мм</span></span></label>
+                <label class="quiz-option"><input class="quiz-option__control" type="radio" name="volume" value="250-350 мм" /><span class="quiz-option__surface"><span class="quiz-option__text">250-350 мм</span></span></label>
+                <label class="quiz-option"><input class="quiz-option__control" type="radio" name="volume" value="350-500 мм" /><span class="quiz-option__surface"><span class="quiz-option__text">350-500 мм</span></span></label>
+                <label class="quiz-option"><input class="quiz-option__control" type="radio" name="volume" value="500+ мм" /><span class="quiz-option__surface"><span class="quiz-option__text">500+ мм</span></span></label>
+              </div>
+            </section>
+
+            <section class="quiz-step" data-quiz-step="3" data-quiz-name="timeline">
+              <div class="quiz-step__head">
+                <p class="quiz-step__index">Шаг 4 из 5</p>
+                <h3 class="quiz-step__title">Когда нужен подбор?</h3>
+              </div>
+              <div class="quiz-step__options">
+                <label class="quiz-option"><input class="quiz-option__control" type="radio" name="timeline" value="Срочно" /><span class="quiz-option__surface"><span class="quiz-option__text">Срочно</span></span></label>
+                <label class="quiz-option"><input class="quiz-option__control" type="radio" name="timeline" value="В течение месяца" /><span class="quiz-option__surface"><span class="quiz-option__text">В течение месяца</span></span></label>
+                <label class="quiz-option"><input class="quiz-option__control" type="radio" name="timeline" value="В этом квартале" /><span class="quiz-option__surface"><span class="quiz-option__text">В этом квартале</span></span></label>
+                <label class="quiz-option"><input class="quiz-option__control" type="radio" name="timeline" value="Изучаю варианты" /><span class="quiz-option__surface"><span class="quiz-option__text">Изучаю варианты</span></span></label>
+              </div>
+            </section>
+
+            <section class="quiz-step" data-quiz-step="4">
+              <div class="quiz-step__head">
+                <p class="quiz-step__index">Шаг 5 из 5</p>
+                <h3 class="quiz-step__title">Куда отправить подборку?</h3>
+              </div>
+              <div class="quiz-step__fields">
+                <label class="quiz-field">
+                  <span class="quiz-field__label">Имя</span>
+                  <input class="quiz-field__control" type="text" name="name" placeholder="Как к вам обращаться" autocomplete="name" required />
+                </label>
+                <label class="quiz-field">
+                  <span class="quiz-field__label">Телефон</span>
+                  <input class="quiz-field__control" type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required data-consult-phone />
+                </label>
+                <p class="quiz-step__note">Отправим подборку и зафиксируем рекомендации инженера для вашего проекта.</p>
+              </div>
+            </section>
+          </div>
+
+          <div class="quiz-form__actions">
+            <button class="quiz-form__button quiz-form__button--ghost" type="button" data-quiz-prev>Назад</button>
+            <button class="quiz-form__button quiz-form__button--primary" type="button" data-quiz-next>Далее</button>
+            <button class="quiz-form__button quiz-form__button--primary quiz-form__button--submit" type="submit" data-quiz-submit>Получить подборку в Telegram</button>
+          </div>
+
+        </form>
+      </div>
+    </section>
+
+    <!-- =========================================
+     *  SECTION: Modals
+     * ========================================= -->
+    <section class="consult-modal" id="consult-modal" aria-hidden="true">
+      <div class="consult-modal__backdrop" data-modal-close></div>
+      <div class="consult-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="consult-title">
+        <button class="consult-modal__close" type="button" aria-label="Закрыть форму консультации" data-modal-close>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="consult-modal__body" data-consult-state="form">
+          <p class="consult-modal__eyebrow">Консультация инженера</p>
+          <h2 class="consult-modal__title" id="consult-title">Заявка на консультацию</h2>
+          <p class="consult-modal__subtitle">Оставьте номер, и наш инженер перезвонит вам в течение 15 минут для уточнения задач проекта.</p>
+
+          <form class="consult-form" data-consult-form action="/send.php" method="POST" novalidate>
+            <label class="consult-form__field">
+              <span class="consult-form__label">Имя</span>
+              <input class="consult-form__control" type="text" name="consult_name" placeholder="Как к вам обращаться" autocomplete="name" />
+            </label>
+
+            <label class="consult-form__field">
+              <span class="consult-form__label">Телефон</span>
+              <input class="consult-form__control" type="tel" name="consult_phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required data-consult-phone />
+            </label>
+
+            <button class="consult-form__button" type="submit">Перезвоните мне</button>
+            <p class="consult-form__privacy">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="models-scene" id="popular-models" aria-label="Популярные модели">
+      <div class="container">
+        <!-- =========================================
+         *  SECTION: Popular Products
+         * ========================================= -->
+        <div class="models-scene__top">
+          <header class="models-scene__header">
+            <h2 class="models-scene__title">Популярные 3D-принтеры для быстрого старта</h2>
+            <p class="models-scene__subtitle">Подборка актуальных моделей для прототипирования, офиса, инженерных пластиков и мелкосерийного производства.</p>
+          </header>
+
+          <div class="models-scene__controls" aria-label="Навигация по карусели">
+            <button class="models-scene__nav models-scene__nav--prev" type="button" data-models-nav="prev" aria-label="Предыдущие модели">←</button>
+            <button class="models-scene__nav models-scene__nav--next" type="button" data-models-nav="next" aria-label="Следующие модели">→</button>
+          </div>
+        </div>
+
+        <div class="models-scene__rail">
+          <div class="models-carousel" data-models-carousel>
+            <article class="product-card">
+              <span class="product-card__badge">BAMBU LAB</span>
+              <a class="product-card__media product-card__image-link" href="catalog/products/bambu-h2s.html" aria-label="Bambu Lab H2S">
+                <img class="product-card__img" src="assets/photo/h2s.webp" alt="Bambu Lab H2S" />
+              </a>
+              <div class="product-card__body">
+                <h3 class="product-card__name">Bambu Lab H2S</h3>
+                <p class="product-card__description">Инженерный 3D-принтер для функциональных прототипов, технологической оснастки и быстрых пилотных запусков.</p>
+              </div>
+              <div class="product-card__footer">
+                <div class="product-card__price card-price">149 000,00 &#8381;</div>
+                <a class="product-card__button btn btn--red" href="catalog/products/bambu-h2s.html">Подробнее</a>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <span class="product-card__badge">BAMBU LAB</span>
+              <a class="product-card__media product-card__image-link" href="catalog/products/bambu-h2s-combo.html" aria-label="Bambu Lab H2S Combo">
+                <img class="product-card__img" src="assets/photo/h2s_combo.webp" alt="Bambu Lab H2S Combo" />
+              </a>
+              <div class="product-card__body">
+                <h3 class="product-card__name">Bambu Lab H2S Combo</h3>
+                <p class="product-card__description">Закрытый высокоскоростной FDM-принтер с системой AMS 2 Pro (на 4 катушки) для многоматериальной и серийной печати.</p>
+              </div>
+              <div class="product-card__footer">
+                <div class="product-card__price card-price">149 000,00 &#8381;</div>
+                <a class="product-card__button btn btn--red" href="catalog/products/bambu-h2s-combo.html">Подробнее</a>
+              </div>
+            </article>
+
+            <a class="product-card" href="catalog/products/bambu-h2c-combo.html" aria-label="Bambu Lab H2C Combo EU">
+              <span class="product-card__badge">BAMBU LAB</span>
+              <div class="product-card__media">
+                <img class="product-card__img" src="assets/photo/H2C_COMBO.webp" alt="Bambu Lab H2C Combo EU" />
+              </div>
+              <div class="product-card__body">
+                <h3 class="product-card__name">Bambu Lab H2C Combo EU</h3>
+                <p class="product-card__description">Флагманская промышленная станция с системой Vortek на 6 слотов, лазерным модулем 40 Вт и AMS 2 Pro для мультиматериального производства.</p>
+              </div>
+              <div class="product-card__footer">
+                <div class="product-card__price card-price">249 000,00 &#8381;</div>
+                <span class="product-card__button btn btn--red">Подробнее</span>
+              </div>
+            </a>
+
+            <article class="product-card">
+              <span class="product-card__badge">BAMBU LAB</span>
+              <a class="product-card__media product-card__image-link" href="catalog/products/bambu-p2s-combo.html" aria-label="Bambu Lab P2S Combo">
+                <img class="product-card__img" src="assets/photo/p2s_combo.webp" alt="Bambu Lab P2S Combo" />
+              </a>
+              <div class="product-card__body">
+                <h3 class="product-card__name">Bambu Lab P2S Combo</h3>
+                <p class="product-card__description">Доступная станция с системой AMS для быстрой многоцветной печати и реализации творческих и инженерных задач.</p>
+              </div>
+              <div class="product-card__footer">
+                <div class="product-card__price card-price">91 000,00 &#8381;</div>
+                <a class="product-card__button btn btn--red" href="catalog/products/bambu-p2s-combo.html">Подробнее</a>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <span class="product-card__badge">BAMBU LAB</span>
+              <a class="product-card__media product-card__image-link" href="catalog/products/bambu-h2d-combo.html" aria-label="Bambu Lab H2D Combo AMS">
+                <img class="product-card__img" src="assets/photo/h2d_combo.webp" alt="Bambu Lab H2D Combo AMS" />
+              </a>
+              <div class="product-card__body">
+                <h3 class="product-card__name">Bambu Lab H2D Combo AMS</h3>
+                <p class="product-card__description">Промышленный 3D-принтер с двумя соплами (до 350&#176;C), активным подогревом камеры и системой AMS Full Combo.</p>
+              </div>
+              <div class="product-card__footer">
+                <div class="product-card__price card-price">от 159 000,00 &#8381;</div>
+                <a class="product-card__button btn btn--red" href="catalog/products/bambu-h2d-combo.html">Подробнее</a>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <span class="product-card__badge">BAMBU LAB</span>
+              <a class="product-card__media product-card__image-link" href="catalog/products/bambu-h2d-laser-10w.html" aria-label="Bambu Lab H2D + Laser 10W">
+                <img class="product-card__img" src="assets/photo/h2d_laser.webp" alt="Bambu Lab H2D + Laser 10W" />
+              </a>
+              <div class="product-card__body">
+                <h3 class="product-card__name">Bambu Lab H2D + Laser 10W</h3>
+                <p class="product-card__description">Флагманская платформа 2-в-1: двухсопельная FDM-печать и встроенный лазерный модуль 10 Вт для гравировки и резки.</p>
+              </div>
+              <div class="product-card__footer">
+                <div class="product-card__price card-price">269 000,00 &#8381;</div>
+                <a class="product-card__button btn btn--red" href="catalog/products/bambu-h2d-laser-10w.html">Подробнее</a>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <span class="product-card__badge">BAMBU LAB</span>
+              <a class="product-card__media product-card__image-link" href="catalog/products/bambu-h2d-laser-40w.html" aria-label="Bambu Lab H2D + Laser 40W">
+                <img class="product-card__img" src="assets/photo/h2d_laser.webp" alt="Bambu Lab H2D + Laser 40W" />
+              </a>
+              <div class="product-card__body">
+                <h3 class="product-card__name">Bambu Lab H2D + Laser 40W</h3>
+                <p class="product-card__description">Самая мощная производственная станция с лазерным модулем 40 Вт. Идеально для резки толстых неметаллических материалов.</p>
+              </div>
+              <div class="product-card__footer">
+                <div class="product-card__price card-price">289 000,00 &#8381;</div>
+                <a class="product-card__button btn btn--red" href="catalog/products/bambu-h2d-laser-40w.html">Подробнее</a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- =========================================
+   *  SECTION: Footer
+   * ========================================= -->
+  <footer class="site-footer">
+    <div class="container site-footer__shell">
+      <div class="site-footer__grid">
+        <div class="site-footer__column">
+          <p class="site-footer__brand">ПромКонтур</p>
+          <p class="site-footer__text">Прямые поставки 3D-принтеров Bambu Lab.</p>
+          <p class="site-footer__meta"><strong>Адрес отгрузки:</strong> Московская область, пгт Отрадное, ул. Лесная, 19к4.</p>
+          <div class="site-footer__contacts">
+            <a class="site-footer__contact" href="tel:+79311080940"><span>Розница</span>+7 (931) 108-09-40</a>
+            <a class="site-footer__contact" href="tel:+79664455233"><span>B2B</span>+7 (966) 445-52-33</a>
+            <a class="site-footer__contact" href="mailto:info@promcontur3d.ru"><span>Email</span>info@promcontur3d.ru</a>
+          </div>
+        </div>
+
+        <div class="site-footer__column">
+          <p class="site-footer__heading">Клиентам</p>
+          <nav aria-label="Навигация в футере">
+            <ul class="site-footer__list">
+              <li><a href="about.html">О компании</a></li>
+              <li><a href="catalog/brands/bambu-lab.html">Каталог Bambu Lab</a></li>
+              <li><a href="delivery.html">Доставка и оплата</a></li>
+              <li><a href="b2b.html">Для юр. лиц</a></li>
+              <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="site-footer__column">
+          <p class="site-footer__heading">Основной канал продаж</p>
+          <p class="site-footer__sales-copy">Быстрые консультации, подбор моделей и оформление розничных заказов.</p>
+          <a class="btn btn--primary site-footer__button" href="https://www.avito.ru/brands/c82497fec853ab882ce5f43a5220d608/all/orgtehnika_i_rashodniki?src=search_seller_info&amp;iid=7861839904&amp;sellerId=5f34061994b7ad334893f6affe93d929" target="_blank" rel="noopener noreferrer">Перейти на Авито</a>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <p class="site-footer__legal">&copy; 2026 ПромКонтур. ИП Смелов Г. В. (ИНН 771573832533)</p>
+        <div class="site-footer__bottom-links">
+          <a href="privacy.html">Политика конфиденциальности</a>
+          <a href="b2b.html#requisites">Реквизиты</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <div class="cookie-banner" id="cookie-banner" aria-live="polite">
+    <p>Мы используем файлы cookie для улучшения работы сайта и аналитики. Продолжая использовать сайт, вы соглашаетесь с нашей <a href="privacy.html">Политикой конфиденциальности</a>.</p>
+    <button class="btn btn--red" id="accept-cookies" type="button">Принять</button>
+  </div>
+
+  <!-- =========================================
+   *  SECTION: Scripts
+   * ========================================= -->
+  <script src="js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Оплата и доставка | ПромКонтур</title>
+  <meta
+    name="description"
+    content="Условия оплаты и доставки промышленных 3D-принтеров ПромКонтур: безналичная оплата, расчетный счет, отгрузка со склада в Москве и гарантия производителя."
+  />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="delivery-page">
+  <header class="site-header header" id="top">
+    <div class="header__top-bar">
+      <div class="header__container header__container--top">
+        <div class="header__top-side" aria-hidden="true"></div>
+
+        <form class="header__search" action="catalog/index.html" method="get" role="search">
+          <label class="header__search-label" for="header-search-delivery">Поиск по каталогу</label>
+          <input
+            class="header__search-input"
+            id="header-search-delivery"
+            type="search"
+            name="q"
+            placeholder="Поиск по каталогу"
+            autocomplete="off"
+          />
+        </form>
+        <div class="header__phones">
+          <a class="header__phone" href="tel:+79311080940">+7 (931) 108-09-40</a>
+          <a class="header__phone" href="tel:+79664455233">+7 (966) 445-52-33</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="header__main-nav">
+      <div class="header__container header__container--main">
+        <a class="header__logo" href="index.html">
+          <img class="header__logo-img" src="assets/brand/logo.png" alt="ПромКонтур" />
+        </a>
+
+        <nav class="header__nav" id="primary-nav" aria-label="Основная навигация">
+          <ul class="header__nav-list">
+            <li class="header__menu-item header__menu-item--catalog" data-catalog-menu>
+              <a
+                class="header__link"
+                href="catalog/index.html"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="header-catalog-dropdown"
+                data-catalog-menu-trigger
+              >
+                Каталог
+              </a>
+
+              <div
+                class="header__mega-menu mega-menu"
+                id="header-catalog-dropdown"
+                data-catalog-menu-dropdown
+              >
+                <div class="mega-menu__list" aria-label="Бренды каталога">
+                  <a class="mega-menu__link" href="catalog/brands/bambu-lab.html" data-preview="assets/preview/preview-bambu.png">Bambu Lab</a>
+                  <a class="mega-menu__link" href="catalog/index.html" data-preview="assets/preview/preview-all.png">Все товары</a>
+                </div>
+
+                <div class="mega-menu__visual">
+                  <img id="mega-menu-img" src="assets/preview/preview-bambu.png" alt="Preview" />
+                </div>
+              </div>
+            </li>
+
+            <li class="header__menu-item">
+              <a class="header__link" href="delivery.html" aria-current="page">Доставка и оплата</a>
+            </li>
+            <li class="header__menu-item">
+              <a class="header__link" href="about.html">О компании</a>
+            </li>
+            <li class="header__menu-item">
+              <a class="header__link" href="b2b.html">Для юр. лиц</a>
+            </li>
+            <li class="header__menu-item">
+              <a class="header__link" href="contacts.html">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="delivery-main">
+    <section class="delivery-hero" aria-labelledby="delivery-title">
+      <div class="container">
+        <div class="delivery-hero__shell">
+          <p class="delivery-hero__eyebrow">Поставка оборудования по всей России</p>
+          <h1 class="delivery-hero__title" id="delivery-title">Оплата и доставка</h1>
+          <p class="delivery-hero__subtitle">
+            Прямые поставки оборудования Bambu Lab с завода и отгрузка со склада в Московской области.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="payment-methods" aria-labelledby="payment-methods-title">
+      <div class="container">
+        <div class="delivery-section__head">
+          <p class="delivery-section__eyebrow">Финансовые условия</p>
+          <h2 class="delivery-section__title" id="payment-methods-title">Способы оплаты</h2>
+          <p class="delivery-section__subtitle">
+            Подбираем формат оплаты под закупочный регламент компании или удобный сценарий частного клиента.
+          </p>
+        </div>
+
+        <div class="payment-methods__grid">
+          <article class="payment-card">
+            <div class="payment-card__icon" aria-hidden="true">
+              <span>01</span>
+            </div>
+            <h3 class="payment-card__title">Наличная оплата</h3>
+            <p class="payment-card__text">Оплата при оформлении заказа или внесение депозита.</p>
+          </article>
+
+          <article class="payment-card">
+            <div class="payment-card__icon" aria-hidden="true">
+              <span>02</span>
+            </div>
+            <h3 class="payment-card__title">Безналичная оплата</h3>
+            <p class="payment-card__text">Принимаем корпоративные и личные банковские карты.</p>
+          </article>
+
+          <article class="payment-card">
+            <div class="payment-card__icon" aria-hidden="true">
+              <span>03</span>
+            </div>
+            <h3 class="payment-card__title">Оплата по расчетному счёту</h3>
+            <p class="payment-card__text">
+              Для юридических лиц. Предоставляем полный пакет закрывающих документов: договор, счет, УПД.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="delivery-process" aria-labelledby="delivery-process-title">
+      <div class="container">
+        <div class="delivery-section__head">
+          <p class="delivery-section__eyebrow">Логистика без сюрпризов</p>
+          <h2 class="delivery-section__title" id="delivery-process-title">Как мы доставляем</h2>
+          <p class="delivery-section__subtitle">
+            Выстроили процесс так, чтобы дорогостоящее оборудование дошло в регион без лишних рисков для
+            механики, стекла и электроники.
+          </p>
+        </div>
+
+        <div class="delivery-process__timeline">
+          <article class="delivery-step">
+            <div class="delivery-step__marker" aria-hidden="true">
+              <span>1</span>
+            </div>
+            <div class="delivery-step__body">
+              <h3 class="delivery-step__title">Наличие и поставка под заказ</h3>
+              <p class="delivery-step__text">
+                Мы поставляем новые 3D-принтеры Bambu Lab напрямую из Китая. Популярные модели есть в наличии на складе в Московской области, спецификации под заказ привозим после оформления.
+              </p>
+            </div>
+          </article>
+
+          <article class="delivery-step">
+            <div class="delivery-step__marker" aria-hidden="true">
+              <span>2</span>
+            </div>
+            <div class="delivery-step__body">
+              <h3 class="delivery-step__title">Оригинальная заводская коробка</h3>
+              <p class="delivery-step__text">
+                3D-принтеры поставляются в плотной оригинальной упаковке с завода. Фабричная коробка и ложементы гарантируют полную сохранность точной механики, экструдеров и остекления при транспортировке.
+              </p>
+            </div>
+          </article>
+
+          <article class="delivery-step">
+            <div class="delivery-step__marker" aria-hidden="true">
+              <span>3</span>
+            </div>
+            <div class="delivery-step__body">
+              <h3 class="delivery-step__title">Видеоотчет об отгрузке</h3>
+              <p class="delivery-step__text">
+                Перед передачей в логистическую службу мы записываем персональное видео с серийным номером и процессом упаковки вашего принтера.
+              </p>
+            </div>
+          </article>
+
+          <article class="delivery-step">
+            <div class="delivery-step__marker" aria-hidden="true">
+              <span>4</span>
+            </div>
+            <div class="delivery-step__body">
+              <h3 class="delivery-step__title">Сопровождение заказа</h3>
+              <p class="delivery-step__text">
+                Персональный менеджер контролирует логистику на всех этапах и оперативно информирует вас о статусе груза и ориентировочных сроках прибытия.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="warranty-info" aria-labelledby="warranty-title">
+      <div class="container">
+        <div class="warranty-info__card">
+          <p class="warranty-info__eyebrow">Поддержка после поставки</p>
+          <h2 class="warranty-info__title" id="warranty-title">Гарантия производителя 12 месяцев</h2>
+          <p class="warranty-info__text">
+            На все новые 3D-принтеры Bambu Lab распространяется официальная заводская гарантия сроком на 1 год.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__shell">
+      <div class="site-footer__grid">
+        <div class="site-footer__column">
+          <p class="site-footer__brand">ПромКонтур</p>
+          <p class="site-footer__text">Прямые поставки 3D-принтеров Bambu Lab.</p>
+          <p class="site-footer__meta"><strong>Адрес отгрузки:</strong> Московская область, пгт Отрадное, ул. Лесная, 19к4.</p>
+          <div class="site-footer__contacts">
+            <a class="site-footer__contact" href="tel:+79311080940"><span>Розница</span>+7 (931) 108-09-40</a>
+            <a class="site-footer__contact" href="tel:+79664455233"><span>B2B</span>+7 (966) 445-52-33</a>
+            <a class="site-footer__contact" href="mailto:info@promcontur3d.ru"><span>Email</span>info@promcontur3d.ru</a>
+          </div>
+        </div>
+
+        <div class="site-footer__column">
+          <p class="site-footer__heading">Клиентам</p>
+          <nav aria-label="Навигация в футере">
+            <ul class="site-footer__list">
+              <li><a href="about.html">О компании</a></li>
+              <li><a href="catalog/brands/bambu-lab.html">Каталог Bambu Lab</a></li>
+              <li><a href="delivery.html">Доставка и оплата</a></li>
+              <li><a href="b2b.html">Для юр. лиц</a></li>
+              <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="site-footer__column">
+          <p class="site-footer__heading">Основной канал продаж</p>
+          <p class="site-footer__sales-copy">Быстрые консультации, подбор моделей и оформление розничных заказов.</p>
+          <a class="btn btn--primary site-footer__button" href="https://www.avito.ru/brands/c82497fec853ab882ce5f43a5220d608/all/orgtehnika_i_rashodniki?src=search_seller_info&amp;iid=7861839904&amp;sellerId=5f34061994b7ad334893f6affe93d929" target="_blank" rel="noopener noreferrer">Перейти на Авито</a>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <p class="site-footer__legal">&copy; 2026 ПромКонтур. ИП Смелов Г. В. (ИНН 771573832533)</p>
+        <div class="site-footer__bottom-links">
+          <a href="privacy.html">Политика конфиденциальности</a>
+          <a href="b2b.html#requisites">Реквизиты</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookie-banner" id="cookie-banner" aria-live="polite">
+    <p>Мы используем файлы cookie для улучшения работы сайта и аналитики. Продолжая использовать сайт, вы соглашаетесь с нашей <a href="privacy.html">Политикой конфиденциальности</a>.</p>
+    <button class="btn btn--red" id="accept-cookies" type="button">Принять</button>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Каталог PromKontur 3D</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/catalog.css" />
+</head>
+<body class="catalog-page">
+  <header class="site-header header catalog-page-header" id="top">
+    <div class="header__top-bar">
+      <div class="header__container header__container--top">
+        <div class="header__top-side" aria-hidden="true"></div>
+
+        <form class="header__search" action="../catalog/index.html" method="get" role="search">
+          <label class="header__search-label" for="header-search-catalog">Поиск по каталогу</label>
+          <input
+            class="header__search-input"
+            id="header-search-catalog"
+            type="search"
+            name="q"
+            placeholder="Поиск по каталогу"
+            autocomplete="off"
+          />
+        </form>
+        <div class="header__phones">
+          <a class="header__phone" href="tel:+79311080940">+7 (931) 108-09-40</a>
+          <a class="header__phone" href="tel:+79664455233">+7 (966) 445-52-33</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="header__main-nav">
+      <div class="header__container header__container--main">
+        <a class="header__logo" href="../index.html">
+          <img class="header__logo-img" src="../assets/brand/logo.png" alt="ПромКонтур" />
+        </a>
+
+        <nav class="header__nav" id="primary-nav" aria-label="Основная навигация">
+          <ul class="header__nav-list">
+            <li class="header__menu-item header__menu-item--catalog" data-catalog-menu>
+              <a
+                class="header__link"
+                href="../catalog/index.html"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="header-catalog-dropdown"
+                data-catalog-menu-trigger
+                aria-current="page"
+              >
+                Каталог
+              </a>
+
+              <div
+                class="header__mega-menu mega-menu"
+                id="header-catalog-dropdown"
+                data-catalog-menu-dropdown
+              >
+                <div class="mega-menu__list" aria-label="Бренды каталога">
+                  <a class="mega-menu__link" href="../catalog/brands/bambu-lab.html" data-preview="../assets/preview/preview-bambu.png">Bambu Lab</a>
+                  <a class="mega-menu__link" href="../catalog/index.html" data-preview="../assets/preview/preview-all.png">Все товары</a>
+                </div>
+
+                <div class="mega-menu__visual">
+                  <img id="mega-menu-img" src="../assets/preview/preview-bambu.png" alt="Превью бренда" />
+                </div>
+              </div>
+            </li>
+
+            <li class="header__menu-item">
+              <a class="header__link" href="../delivery.html">Доставка и оплата</a>
+            </li>
+            <li class="header__menu-item">
+              <a class="header__link" href="../about.html">О компании</a>
+            </li>
+            <li class="header__menu-item">
+              <a class="header__link" href="../b2b.html">Для юр. лиц</a>
+            </li>
+            <li class="header__menu-item">
+              <a class="header__link" href="../contacts.html">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="catalog-shell__main catalog-shell__main--compact">
+    <section class="catalog-directory">
+      <div class="catalog-shell__container catalog-directory__layout">
+        <aside class="catalog-sidebar">
+          <p class="catalog-sidebar__eyebrow">Каталог</p>
+          <h2 class="catalog-sidebar__title">Бренды</h2>
+          <nav aria-label="Бренды каталога">
+            <ul class="catalog-sidebar__list">
+              <li><a class="catalog-sidebar__link catalog-sidebar__link--active" href="./brands/bambu-lab.html" data-brand-filter="Bambu Lab" aria-current="page">Bambu Lab</a></li>
+            </ul>
+          </nav>
+        </aside>
+
+        <div class="catalog-directory__main">
+          <section class="catalog-grid catalog-grid--three" data-catalog-grid>
+            <a class="catalog-product-card" href="./products/bambu-h2s-combo.html" data-search-item data-search-title="Bambu Lab H2S Combo" data-search-brand="Bambu Lab" data-search-application="Prototyping" data-search-tags="h2s bambu lab engineering enclosed 300c 256x256x256">
+              <div class="catalog-product-card__visual">
+                <span class="catalog-product-card__brand-pill">BAMBU LAB</span>
+                <div class="catalog-product-card__device">
+                  <div class="catalog-product-card__device-body catalog-product-card__device-body--compact">
+                    <img src="../assets/photo/h2s.webp" alt="Bambu Lab H2S Combo" style="position: relative; z-index: 1; width: 100%; height: 100%; object-fit: contain;" />
+                  </div>
+                </div>
+              </div>
+              <div class="catalog-product-card__body">
+                <h3 class="catalog-product-card__title">Bambu Lab H2S Combo</h3>
+                <div class="catalog-product-card__stats">
+                  <span class="catalog-product-card__stat"><span class="catalog-product-card__stat-icon">&#9632;</span>256 &#215; 256 &#215; 256 мм</span>
+                  <span class="catalog-product-card__stat"><span class="catalog-product-card__stat-icon">&#176;</span>300&#176;C</span>
+                  <span class="catalog-product-card__stat"><span class="catalog-product-card__stat-icon">&#8594;</span>149 000,00 &#8381;</span>
+                </div>
+                <span class="catalog-product-card__cta">Подробнее</span>
+              </div>
+            </a>
+
+            <a class="catalog-product-card" href="./products/bambu-p2s-combo.html" data-search-item data-search-title="Bambu Lab P2S Combo" data-search-brand="Bambu Lab" data-search-application="Prototyping" data-search-tags="p2s combo ams direct extruder enclosed">
+              <div class="catalog-product-card__visual">
+                <span class="catalog-product-card__brand-pill">BAMBU LAB</span>
+                <div class="catalog-product-card__device">
+                  <div class="catalog-product-card__device-body catalog-product-card__device-body--compact">
+                    <img src="../assets/photo/p2s_combo.webp" alt="Bambu Lab P2S Combo" style="position: relative; z-index: 1; width: 100%; height: 100%; object-fit: contain;" />
+                  </div>
+                </div>
+              </div>
+              <div class="catalog-product-card__body">
+                <h3 class="catalog-product-card__title">Bambu Lab P2S Combo</h3>
+                <div class="catalog-product-card__stats">
+                  <span class="catalog-product-card__stat"><span class="catalog-product-card__stat-icon">&#9632;</span>256 &#215; 256 &#215; 256 мм</span>
+                  <span class="catalog-product-card__stat"><span class="catalog-product-card__stat-icon">&#176;</span>300&#176;C</span>
+                  <span class="catalog-product-card__stat"><span class="catalog-product-card__stat-icon">&#8594;</span>91 000,00 &#8381;</span>
+                </div>
+                <span class="catalog-product-card__cta">Подробнее</span>
+              </div>
+            </a>
+
+            <a class="catalog-product-card" href="./products/bambu-h2c-combo.html" data-search-item data-search-title="Bambu Lab H2C Combo EU" data-search-brand="Bambu Lab" data-search-application="Production" data-search-tags="h2c combo eu vortek ams 2 pro laser 40w flagship">
+              <div class="catalog-product-card__visual">
+                <span class="catalog-product-card__brand-pill">НОВИНКА</span>
+                <div class="catalog-product-card__device">
+                  <div class="catalog-product-card__device-body catalog-product-card__device-body--compact">
+                    <img src="../assets/photo/H2C_COMBO.webp" alt="Bambu Lab H2C Combo EU" style="position: relative; z-index: 1; width: 100%; height: 100%; object-fit: contain; transform: scale(1.4);" />
+                  </div>
+                </div>
+              </div>
+              <div class="catalog-product-card__body">
+                <h3 class="catalog-product-card__title">Bambu Lab H2C Combo EU</h3>
+                <div class="catalog-product-card__stats">
+                  <span class="catalog-product-card__stat"><span class="catalog-product-card__stat-icon">&#9632;</span>330 &#215; 320 &#215; 325 мм</span>
+                  <span class="catalog-product-card__stat"><span class="catalog-product-card__stat-icon">&#176;</span>350&#176;C</span>
+                  <span class="catalog-product-card__stat"><span class="catalog-product-card__stat-icon">&#8594;</span>249 000,00 &#8381;</span>
+                </div>
+                <span class="catalog-product-card__cta">Подробнее</span>
+              </div>
+            </a>
+
+            <a class="catalog-product-card" href="./products/bambu-h2d-combo.html" data-search-item data-search-title="Bambu Lab H2D Combo" data-search-brand="Bambu Lab" data-search-application="Production" data-search-tags="h2d combo ams dual nozzle 350x320x325">
+              <div class="catalog-product-card__visual">
+                <span class="catalog-product-card__brand-pill">BAMBU LAB</span>
+                <div class="catalog-product-card__device">
+                  <div class="catalog-product-card__device-body catalog-product-card__device-body--compact">
+                    <img src="../assets/photo/h2d_combo.webp" alt="Bambu Lab H2D Combo" style="position: relative; z-index: 1; width: 100%; height: 100%; object-fit: contain; transform: scale(1.4);" />
+                  </div>
+                </div>
+              </div>
+              <div class="catalog-product-card__body">
+                <h3 class="catalog-product-card__title">Bambu Lab H2D Combo</h3>
+                <div class="catalog-product-card__stats">
+                  <span class="catalog-product-card__stat"><span class="catalog-product-card__stat-icon">&#9632;</span>350 &#215; 320 &#215; 325 мм</span>
+                  <span class="catalog-product-card__stat"><span class="catalog-product-card__stat-icon">&#176;</span>350&#176;C</span>
+                  <span class="catalog-product-card__stat"><span class="catalog-product-card__stat-icon">&#8594;</span>от 159 000,00 &#8381;</span>
+                </div>
+                <span class="catalog-product-card__cta">Подробнее</span>
+              </div>
+            </a>
+
+            <a class="catalog-product-card" href="./products/bambu-h2d-laser-10w.html" data-search-item data-search-title="Bambu Lab H2D + Laser 10W" data-search-brand="Bambu Lab" data-search-application="Production" data-search-tags="h2d laser 10w laser module dual nozzle">
+              <div class="catalog-product-card__visual">
+                <span class="catalog-product-card__brand-pill">НОВИНКА</span>
+                <div class="catalog-product-card__device">
+                  <div class="catalog-product-card__device-body catalog-product-card__device-body--compact">
+                    <img src="../assets/photo/h2d_laser.webp" alt="Bambu Lab H2D + Laser 10W" style="position: relative; z-index: 1; width: 100%; height: 100%; object-fit: contain;" />
+                  </div>
+                </div>
+              </div>
+              <div class="catalog-product-card__body">
+                <h3 class="catalog-product-card__title">Bambu Lab H2D + Laser 10W</h3>
+                <div class="catalog-product-card__stats">
+                  <span class="catalog-product-card__stat"><span class="catalog-product-card__stat-icon">&#9632;</span>350 &#215; 320 &#215; 325 мм</span>
+                  <span class="catalog-product-card__stat"><span class="catalog-product-card__stat-icon">&#176;</span>300&#176;C</span>
+                  <span class="catalog-product-card__stat"><span class="catalog-product-card__stat-icon">&#8594;</span>269 000,00 &#8381;</span>
+                </div>
+                <span class="catalog-product-card__cta">Подробнее</span>
+              </div>
+            </a>
+
+            <a class="catalog-product-card" href="./products/bambu-h2d-laser-40w.html" data-search-item data-search-title="Bambu Lab H2D + Laser 40W" data-search-brand="Bambu Lab" data-search-application="Production" data-search-tags="h2d laser 40w laser module dual nozzle">
+              <div class="catalog-product-card__visual">
+                <span class="catalog-product-card__brand-pill">НОВИНКА</span>
+                <div class="catalog-product-card__device">
+                  <div class="catalog-product-card__device-body catalog-product-card__device-body--compact">
+                    <img src="../assets/photo/h2d_laser.webp" alt="Bambu Lab H2D + Laser 40W" style="position: relative; z-index: 1; width: 100%; height: 100%; object-fit: contain;" />
+                  </div>
+                </div>
+              </div>
+              <div class="catalog-product-card__body">
+                <h3 class="catalog-product-card__title">Bambu Lab H2D + Laser 40W</h3>
+                <div class="catalog-product-card__stats">
+                  <span class="catalog-product-card__stat"><span class="catalog-product-card__stat-icon">&#9632;</span>350 &#215; 320 &#215; 325 мм</span>
+                  <span class="catalog-product-card__stat"><span class="catalog-product-card__stat-icon">&#176;</span>300&#176;C</span>
+                  <span class="catalog-product-card__stat"><span class="catalog-product-card__stat-icon">&#8594;</span>289 000,00 &#8381;</span>
+                </div>
+                <span class="catalog-product-card__cta">Подробнее</span>
+              </div>
+            </a>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__shell">
+      <div class="site-footer__grid">
+        <div class="site-footer__column">
+          <p class="site-footer__brand">ПромКонтур</p>
+          <p class="site-footer__text">Прямые поставки 3D-принтеров Bambu Lab.</p>
+          <p class="site-footer__meta"><strong>Адрес отгрузки:</strong> Московская область, пгт Отрадное, ул. Лесная, 19к4.</p>
+          <div class="site-footer__contacts">
+            <a class="site-footer__contact" href="tel:+79311080940"><span>Розница</span>+7 (931) 108-09-40</a>
+            <a class="site-footer__contact" href="tel:+79664455233"><span>B2B</span>+7 (966) 445-52-33</a>
+            <a class="site-footer__contact" href="mailto:info@promcontur3d.ru"><span>Email</span>info@promcontur3d.ru</a>
+          </div>
+        </div>
+
+        <div class="site-footer__column">
+          <p class="site-footer__heading">Клиентам</p>
+          <nav aria-label="Навигация в футере">
+            <ul class="site-footer__list">
+              <li><a href="../about.html">О компании</a></li>
+              <li><a href="./brands/bambu-lab.html">Каталог Bambu Lab</a></li>
+              <li><a href="../delivery.html">Доставка и оплата</a></li>
+              <li><a href="../b2b.html">Для юр. лиц</a></li>
+              <li><a href="../contacts.html">Контакты</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="site-footer__column">
+          <p class="site-footer__heading">Основной канал продаж</p>
+          <p class="site-footer__sales-copy">Быстрые консультации, подбор моделей и оформление розничных заказов.</p>
+          <a class="btn btn--primary site-footer__button" href="https://www.avito.ru/brands/c82497fec853ab882ce5f43a5220d608/all/orgtehnika_i_rashodniki?src=search_seller_info&amp;iid=7861839904&amp;sellerId=5f34061994b7ad334893f6affe93d929" target="_blank" rel="noopener noreferrer">Перейти на Авито</a>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <p class="site-footer__legal">&copy; 2026 ПромКонтур. ИП Смелов Г. В. (ИНН 771573832533)</p>
+        <div class="site-footer__bottom-links">
+          <a href="../privacy.html">Политика конфиденциальности</a>
+          <a href="../b2b.html#requisites">Реквизиты</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookie-banner" id="cookie-banner" aria-live="polite">
+    <p>Мы используем файлы cookie для улучшения работы сайта и аналитики. Продолжая использовать сайт, вы соглашаетесь с нашей <a href="../privacy.html">Политикой конфиденциальности</a>.</p>
+    <button class="btn btn--red" id="accept-cookies" type="button">Принять</button>
+  </div>
+
+  <script src="../js/main.js" defer></script>
+  <script src="../js/catalog.js" defer></script>
+</body>
+</html>
