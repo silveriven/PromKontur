@@ -63,8 +63,6 @@
 
   --font-main: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
 }
-
-
 /* =========================================
  *  BASE: Reset / Body / Links
  * ========================================= */
@@ -103,8 +101,6 @@ img {
   display: block;
   max-width: 100%;
 }
-
-
 /* =========================================
  *  LAYOUT: Container
  * ========================================= */
@@ -4271,4 +4267,46 @@ body.no-scroll {
 }
 
 
+
+/* ==========================================
+ * AMOCRM CONSENT CHECKBOX
+ * ========================================== */
+.amocrm-consent-wrapper {
+  margin: 15px 0;
+  width: 100%;
+  text-align: left;
+}
+
+.amocrm-consent {
+  display: inline-flex;
+  align-items: flex-start;
+  cursor: pointer;
+  gap: 12px;
+}
+
+.amocrm-consent__checkbox {
+  margin-top: 3px;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  accent-color: #e50020;
+  flex-shrink: 0;
+}
+
+.amocrm-consent__text {
+  font-size: 13px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 400;
+}
+
+.amocrm-consent__text a {
+  color: #e50020;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.amocrm-consent__text a:hover {
+  color: #ffffff;
+}
 

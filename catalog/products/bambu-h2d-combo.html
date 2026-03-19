@@ -434,14 +434,15 @@
         <p class="consult-modal__subtitle">Оставьте номер телефона и напишите ваш вопрос. Наш менеджер свяжется с вами и детально проконсультирует.</p>
 
         <form class="consult-form" data-consult-form action="/send.php" method="POST" novalidate>
+          <input type="hidden" name="form_subject" value="Вопрос по товару Bambu Lab H2D Combo" />
           <label class="consult-form__field">
             <span class="consult-form__label">Имя</span>
-            <input class="consult-form__control" type="text" name="consult_name" placeholder="Как к вам обращаться" autocomplete="name" />
+            <input class="consult-form__control" type="text" name="user_name" placeholder="Как к вам обращаться" autocomplete="name" />
           </label>
 
           <label class="consult-form__field">
             <span class="consult-form__label">Телефон</span>
-            <input class="consult-form__control" type="tel" name="consult_phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required data-consult-phone />
+            <input class="consult-form__control" type="tel" name="user_phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required data-consult-phone />
           </label>
 
           <label class="consult-form__field">
@@ -449,6 +450,14 @@
             <textarea class="consult-form__control" name="consult_comment" placeholder="Напишите, что вас интересует..." rows="3" style="resize: vertical; min-height: 80px;"></textarea>
           </label>
 
+          <div class="amocrm-consent-wrapper">
+            <label class="amocrm-consent">
+              <input type="checkbox" name="privacy_consent" value="accepted" class="amocrm-consent__checkbox" required checked>
+              <span class="amocrm-consent__text">
+                Я даю согласие на обработку данных согласно <a href="/privacy.html" target="_blank">Политике конфиденциальности</a>
+              </span>
+            </label>
+          </div>
           <button class="consult-form__button" type="submit">Отправить запрос</button>
           <p class="consult-form__privacy">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
         </form>
