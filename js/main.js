@@ -6,8 +6,9 @@
  *  HEADER: Sticky readability on scroll
  * ========================================= */
 const header = document.querySelector(".site-header");
-const navToggle = document.querySelector(".nav-toggle");
-const desktopBreakpoint = 1024;
+const headerBurger = document.querySelector(".header__burger");
+const headerNav = document.querySelector(".header__nav");
+const mobileNavBreakpoint = 767;
 
 const syncHeaderState = () => {
   if (!header) return;
@@ -21,24 +22,36 @@ syncHeaderState();
  *  NAV: Toggle mobile menu
  * ========================================= */
 const syncMenuState = (isOpen) => {
-  if (!header || !navToggle) return;
+  if (!header || !headerBurger || !headerNav) return;
   header.classList.toggle("menu-open", isOpen);
-  navToggle.setAttribute("aria-expanded", String(isOpen));
-  navToggle.setAttribute("aria-label", isOpen ? "Закрыть меню навигации" : "Открыть меню навигации");
+  headerNav.classList.toggle("nav-active", isOpen);
+  headerBurger.classList.toggle("burger-active", isOpen);
+  document.body.classList.toggle("no-scroll", isOpen);
+  headerBurger.setAttribute("aria-expanded", String(isOpen));
+  headerBurger.setAttribute("aria-label", isOpen ? "Закрыть меню" : "Открыть меню");
 };
 
-if (header && navToggle) {
-  navToggle.addEventListener("click", () => {
-    const isOpen = !header.classList.contains("menu-open");
+if (header && headerBurger && headerNav) {
+  headerBurger.addEventListener("click", (event) => {
+    event.preventDefault();
+    const isOpen = !headerNav.classList.contains("nav-active");
     syncMenuState(isOpen);
   });
 
   window.addEventListener("resize", () => {
-    if (window.innerWidth > desktopBreakpoint) syncMenuState(false);
+    if (window.innerWidth > mobileNavBreakpoint) syncMenuState(false);
   });
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") syncMenuState(false);
+  });
+
+  document.addEventListener("click", (event) => {
+    if (window.innerWidth > mobileNavBreakpoint) return;
+    if (!(event.target instanceof Node)) return;
+    if (!headerNav.classList.contains("nav-active")) return;
+    if (headerNav.contains(event.target) || headerBurger.contains(event.target)) return;
+    syncMenuState(false);
   });
 
   syncMenuState(false);
@@ -78,48 +91,16 @@ const syncCatalogMenuState = (isOpen) => {
 };
 
 if (catalogMenu && catalogMenuTrigger && catalogMenuDropdown) {
-  let closeCatalogMenuTimer = 0;
-
-  const clearCloseCatalogMenuTimer = () => {
-    if (!closeCatalogMenuTimer) return;
-    window.clearTimeout(closeCatalogMenuTimer);
-    closeCatalogMenuTimer = 0;
-  };
-
-  const openCatalogMenu = () => {
-    clearCloseCatalogMenuTimer();
-    if (window.innerWidth <= desktopBreakpoint) return;
-    syncCatalogMenuState(true);
-  };
-
   const closeCatalogMenu = () => {
-    clearCloseCatalogMenuTimer();
     syncCatalogMenuState(false);
   };
 
-  const scheduleCatalogMenuClose = () => {
-    clearCloseCatalogMenuTimer();
-    closeCatalogMenuTimer = window.setTimeout(() => {
-      syncCatalogMenuState(false);
-      closeCatalogMenuTimer = 0;
-    }, 90);
-  };
-
-  catalogMenuTrigger.addEventListener("mouseenter", openCatalogMenu);
-  catalogMenuTrigger.addEventListener("mouseleave", scheduleCatalogMenuClose);
-  catalogMenuDropdown.addEventListener("mouseenter", openCatalogMenu);
-  catalogMenuDropdown.addEventListener("mouseleave", scheduleCatalogMenuClose);
-
   catalogMenuTrigger.addEventListener("click", (event) => {
-    if (window.innerWidth <= desktopBreakpoint) {
-      event.preventDefault();
-      clearCloseCatalogMenuTimer();
-      syncCatalogMenuState(!catalogMenu.classList.contains("catalog-menu--open"));
-    }
+    event.preventDefault();
+    syncCatalogMenuState(!catalogMenu.classList.contains("catalog-menu--open"));
   });
 
   window.addEventListener("resize", () => {
-    clearCloseCatalogMenuTimer();
     syncCatalogMenuState(false);
   });
 
