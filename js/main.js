@@ -31,7 +31,7 @@ const syncMenuState = (isOpen) => {
   headerBurger.setAttribute("aria-label", isOpen ? "Закрыть меню" : "Открыть меню");
 };
 
-if (header && headerBurger && headerNav) {
+if (header && headerBurger && headerNav && !headerBurger.id) {
   headerBurger.addEventListener("click", (event) => {
     event.preventDefault();
     const isOpen = !headerNav.classList.contains("nav-active");
@@ -663,6 +663,32 @@ document.addEventListener("DOMContentLoaded", function() {
             setTimeout(() => cookieBanner.remove(), 400); // Плавное исчезновение
         });
     }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const burgerBtn = document.getElementById("burger-menu-btn");
+    const mobileNavContainer = document.querySelector(".header__container--bottom");
+
+    if (burgerBtn && mobileNavContainer) {
+        burgerBtn.addEventListener("click", () => {
+            const isOpen = burgerBtn.classList.toggle("burger-active");
+            mobileNavContainer.classList.toggle("nav-active", isOpen);
+            document.body.classList.toggle("no-scroll", isOpen);
+            burgerBtn.setAttribute("aria-expanded", String(isOpen));
+            burgerBtn.setAttribute("aria-label", isOpen ? "Закрыть мобильное меню" : "Открыть мобильное меню");
+        });
+    }
+
+    document.addEventListener("click", (e) => {
+        if (burgerBtn && mobileNavContainer && burgerBtn.classList.contains("burger-active") &&
+            !mobileNavContainer.contains(e.target) && !burgerBtn.contains(e.target)) {
+            burgerBtn.classList.remove("burger-active");
+            mobileNavContainer.classList.remove("nav-active");
+            document.body.classList.remove("no-scroll");
+            burgerBtn.setAttribute("aria-expanded", "false");
+            burgerBtn.setAttribute("aria-label", "Открыть мобильное меню");
+        }
+    });
 });
 
 
