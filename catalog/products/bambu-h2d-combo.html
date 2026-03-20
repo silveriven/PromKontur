@@ -429,37 +429,34 @@
       </button>
 
       <div class="consult-modal__body" data-consult-state="form">
-        <p class="consult-modal__eyebrow">КОНСУЛЬТАЦИЯ МЕНЕДЖЕРА</p>
-        <h2 class="consult-modal__title" id="consult-title">Задать вопрос менеджеру</h2>
-        <p class="consult-modal__subtitle">Оставьте номер телефона и напишите ваш вопрос. Наш менеджер свяжется с вами и детально проконсультирует.</p>
+        <div class="modal__header-text" style="margin-bottom: 20px;">
+          <h3 id="consult-title" style="margin: 0 0 10px 0; font-size: 24px;">Запросить расчет стоимости</h3>
+          <p style="margin: 0; color: rgba(255,255,255,0.7); font-size: 14px;">Оставьте контакты, и наш менеджер подготовит для вас подробный расчет и коммерческое предложение.</p>
+        </div>
 
-        <form class="consult-form" data-consult-form action="/send.php" method="POST" novalidate>
-          <input type="hidden" name="form_subject" value="Вопрос по товару Bambu Lab H2D Combo" />
-          <label class="consult-form__field">
-            <span class="consult-form__label">Имя</span>
-            <input class="consult-form__control" type="text" name="user_name" placeholder="Как к вам обращаться" autocomplete="name" />
-          </label>
+        <form action="/send.php" method="POST" class="crm-lead-form" data-consult-form novalidate>
+          <input type="hidden" name="form_subject" value="Запрос расчета: Bambu Lab H2D Combo AMS">
 
-          <label class="consult-form__field">
-            <span class="consult-form__label">Телефон</span>
-            <input class="consult-form__control" type="tel" name="user_phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required data-consult-phone />
-          </label>
+          <div class="form-group">
+            <label for="product_modal_name">Как к вам обращаться? *</label>
+            <input type="text" id="product_modal_name" name="user_name" class="form-control" required>
+          </div>
 
-          <label class="consult-form__field">
-            <span class="consult-form__label">Ваш вопрос или комментарий</span>
-            <textarea class="consult-form__control" name="consult_comment" placeholder="Напишите, что вас интересует..." rows="3" style="resize: vertical; min-height: 80px;"></textarea>
-          </label>
+          <div class="form-group">
+            <label for="product_modal_phone">Контактный телефон *</label>
+            <input type="tel" id="product_modal_phone" name="user_phone" class="form-control" placeholder="+7 999 123-45-67" required data-consult-phone>
+          </div>
 
-          <div class="amocrm-consent-wrapper">
-            <label class="amocrm-consent">
-              <input type="checkbox" name="privacy_consent" value="accepted" class="amocrm-consent__checkbox" required checked>
-              <span class="amocrm-consent__text">
-                Я даю согласие на обработку данных согласно <a href="/privacy.html" target="_blank">Политике конфиденциальности</a>
+          <div class="legal-consent-wrapper">
+            <label class="legal-consent">
+              <input type="checkbox" name="privacy_consent" class="legal-consent__checkbox" required checked>
+              <span class="legal-consent__text">
+                Я даю согласие на обработку персональных данных согласно <a href="/privacy.html" target="_blank">Политике конфиденциальности</a>
               </span>
             </label>
           </div>
-          <button class="consult-form__button" type="submit">Отправить запрос</button>
-          <p class="consult-form__privacy">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
+
+          <button type="submit" class="btn btn--red" style="width: 100%; margin-top: 10px;">Получить расчет</button>
         </form>
       </div>
     </div>

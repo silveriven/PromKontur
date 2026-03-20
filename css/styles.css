@@ -4269,44 +4269,43 @@ body.no-scroll {
 
 
 /* ==========================================
- * AMOCRM CONSENT CHECKBOX
+ * LEGAL CONSENT CHECKBOX
  * ========================================== */
-.amocrm-consent-wrapper {
-  margin: 15px 0;
+.legal-consent-wrapper {
+  margin-top: 15px;
+  margin-bottom: 20px;
   width: 100%;
-  text-align: left;
 }
 
-.amocrm-consent {
-  display: inline-flex;
+.legal-consent {
+  display: flex;
   align-items: flex-start;
   cursor: pointer;
-  gap: 12px;
+  gap: 10px;
 }
 
-.amocrm-consent__checkbox {
+.legal-consent__checkbox {
   margin-top: 3px;
   cursor: pointer;
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   accent-color: #e50020;
-  flex-shrink: 0;
 }
 
-.amocrm-consent__text {
-  font-size: 13px;
+.legal-consent__text {
+  font-size: 12px;
   line-height: 1.4;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.7);
   font-weight: 400;
 }
 
-.amocrm-consent__text a {
+.legal-consent__text a {
   color: #e50020;
   text-decoration: underline;
   transition: color 0.3s ease;
 }
 
-.amocrm-consent__text a:hover {
+.legal-consent__text a:hover {
   color: #ffffff;
 }
 
@@ -4399,5 +4398,74 @@ body.no-scroll {
   .header__burger {
     display: none !important;
   }
+}
+
+/* ==========================================
+ * FIX: LEGAL CONSENT CHECKBOXES (ФЗ-152)
+ * ========================================== */
+.legal-consent-wrapper {
+  margin-top: 15px !important;
+  margin-bottom: 20px !important;
+  width: 100% !important;
+  text-align: left !important;
+}
+
+.legal-consent {
+  display: flex !important;
+  align-items: flex-start !important;
+  cursor: pointer !important;
+  gap: 12px !important;
+  width: 100% !important;
+}
+
+.legal-consent__checkbox {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  width: 18px !important;
+  height: 18px !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  background-color: #1a1a1a !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  margin-top: 2px !important;
+  flex-shrink: 0 !important;
+  position: relative !important;
+  transition: all 0.3s ease !important;
+}
+
+.legal-consent__checkbox:checked {
+  background-color: #e50020 !important;
+  border-color: #e50020 !important;
+}
+
+.legal-consent__checkbox:checked::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: 45% !important;
+  transform: translate(-50%, -50%) rotate(45deg) !important;
+  width: 5px !important;
+  height: 10px !important;
+  border: solid white !important;
+  border-width: 0 2px 2px 0 !important;
+  display: block !important;
+}
+
+.legal-consent__text {
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-weight: 400 !important;
+  margin: 0 !important;
+}
+
+.legal-consent__text a {
+  color: #e50020 !important;
+  text-decoration: underline !important;
+  transition: color 0.3s ease !important;
+}
+
+.legal-consent__text a:hover {
+  color: #ffffff !important;
 }
 

@@ -152,7 +152,27 @@
           Если вам нужно подобрать оборудование под производство, печать этикеток, упаковки, рекламной или технической продукции, мы подключимся к задаче и поможем собрать рабочее решение.
         </p>
         <div class="about-cta__actions">
-          <a class="btn btn--primary" href="contacts.html">Связаться с нами</a>
+          <form action="/send.php" method="POST" class="crm-lead-form">
+            <input type="hidden" name="form_subject" value="Сотрудничество (О компании)">
+
+            <div class="form-group" style="margin-bottom: 15px;">
+              <input type="text" name="user_name" class="form-control" placeholder="Ваше имя *" required style="width: 100%; max-width: 400px; padding: 12px; border-radius: 6px; border: 1px solid #333; background: #1a1a1a; color: #fff;">
+            </div>
+            <div class="form-group" style="margin-bottom: 15px;">
+              <input type="tel" name="user_phone" class="form-control" placeholder="Ваш телефон *" required style="width: 100%; max-width: 400px; padding: 12px; border-radius: 6px; border: 1px solid #333; background: #1a1a1a; color: #fff;">
+            </div>
+
+            <div class="legal-consent-wrapper" style="max-width: 400px;">
+              <label class="legal-consent">
+                <input type="checkbox" name="privacy_consent" class="legal-consent__checkbox" required checked>
+                <span class="legal-consent__text">
+                  Я даю согласие на обработку персональных данных согласно <a href="/privacy.html" target="_blank">Политике конфиденциальности</a>
+                </span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn--red" style="padding: 12px 30px; border: none; border-radius: 6px; background: #e50020; color: #fff; font-weight: bold; cursor: pointer;">Обсудить сотрудничество</button>
+          </form>
         </div>
       </div>
     </section>
