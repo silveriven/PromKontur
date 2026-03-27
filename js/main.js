@@ -3,20 +3,32 @@
  * ========================================= */
 
 /* =========================================
- *  HEADER: Sticky readability on scroll
+ * SMART HEADER: Hide Top-Bar on Scroll Down
  * ========================================= */
 const header = document.querySelector(".site-header");
+const headerElement = document.querySelector(".site-header");
 const headerBurger = document.querySelector(".header__burger");
 const headerNav = document.querySelector(".header__nav");
-const mobileNavBreakpoint = 767;
+const mobileNavBreakpoint = 900;
+let lastScrollTop = 0;
 
-const syncHeaderState = () => {
-  if (!header) return;
-  header.classList.toggle("is-scrolled", window.scrollY > 6);
-};
+if (headerElement) {
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
-window.addEventListener("scroll", syncHeaderState, { passive: true });
-syncHeaderState();
+    if (window.innerWidth > 900) {
+      if (currentScroll > lastScrollTop && currentScroll > 50) {
+        headerElement.classList.add("hide-top-bar");
+      } else {
+        headerElement.classList.remove("hide-top-bar");
+      }
+    } else {
+      headerElement.classList.remove("hide-top-bar");
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+  }, { passive: true });
+}
 
 /* =========================================
  *  NAV: Toggle mobile menu
@@ -31,7 +43,7 @@ const syncMenuState = (isOpen) => {
   headerBurger.setAttribute("aria-label", isOpen ? "Закрыть меню" : "Открыть меню");
 };
 
-if (header && headerBurger && headerNav && !headerBurger.id) {
+if (header && headerBurger && headerNav) {
   headerBurger.addEventListener("click", (event) => {
     event.preventDefault();
     const isOpen = !headerNav.classList.contains("nav-active");
@@ -52,6 +64,12 @@ if (header && headerBurger && headerNav && !headerBurger.id) {
     if (!headerNav.classList.contains("nav-active")) return;
     if (headerNav.contains(event.target) || headerBurger.contains(event.target)) return;
     syncMenuState(false);
+  });
+
+  headerNav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth <= mobileNavBreakpoint) syncMenuState(false);
+    });
   });
 
   syncMenuState(false);
@@ -76,9 +94,14 @@ const syncCatalogHeaderCurrentState = () => {
     pathname.includes("/catalog/");
 
   if (isCatalogPath) {
-    catalogMenuTrigger.setAttribute("aria-current", "page");
+    if (catalogMenuTrigger.tagName === "A") {
+      catalogMenuTrigger.setAttribute("aria-current", "page");
+    } else {
+      catalogMenuTrigger.classList.add("is-current");
+    }
   } else {
     catalogMenuTrigger.removeAttribute("aria-current");
+    catalogMenuTrigger.classList.remove("is-current");
   }
 };
 
@@ -664,31 +687,3 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
-
-document.addEventListener("DOMContentLoaded", () => {
-    const burgerBtn = document.getElementById("burger-menu-btn");
-    const mobileNavContainer = document.querySelector(".header__container--bottom");
-
-    if (burgerBtn && mobileNavContainer) {
-        burgerBtn.addEventListener("click", () => {
-            const isOpen = burgerBtn.classList.toggle("burger-active");
-            mobileNavContainer.classList.toggle("nav-active", isOpen);
-            document.body.classList.toggle("no-scroll", isOpen);
-            burgerBtn.setAttribute("aria-expanded", String(isOpen));
-            burgerBtn.setAttribute("aria-label", isOpen ? "Закрыть мобильное меню" : "Открыть мобильное меню");
-        });
-    }
-
-    document.addEventListener("click", (e) => {
-        if (burgerBtn && mobileNavContainer && burgerBtn.classList.contains("burger-active") &&
-            !mobileNavContainer.contains(e.target) && !burgerBtn.contains(e.target)) {
-            burgerBtn.classList.remove("burger-active");
-            mobileNavContainer.classList.remove("nav-active");
-            document.body.classList.remove("no-scroll");
-            burgerBtn.setAttribute("aria-expanded", "false");
-            burgerBtn.setAttribute("aria-label", "Открыть мобильное меню");
-        }
-    });
-});
-
-
