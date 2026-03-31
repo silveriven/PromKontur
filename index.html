@@ -346,7 +346,7 @@
             <button class="quiz-form__button quiz-form__button--primary" type="button" data-quiz-next>Далее</button>
             <div class="legal-consent-wrapper">
               <label class="legal-consent">
-                <input type="checkbox" name="privacy_consent" class="legal-consent__checkbox" required checked>
+                <input type="checkbox" name="privacy_consent" class="legal-consent__checkbox" required>
                 <span class="legal-consent__text">
                   Я даю согласие на обработку персональных данных согласно <a href="/privacy.html" target="_blank">Политике конфиденциальности</a>
                 </span>
@@ -372,14 +372,14 @@
 
         <div class="consult-modal__body" data-consult-state="form">
           <p class="consult-modal__eyebrow">Консультация инженера</p>
-          <h2 class="consult-modal__title" id="consult-title">Заявка на консультацию</h2>
-          <p class="consult-modal__subtitle">Оставьте номер, и наш инженер перезвонит вам в течение 15 минут для уточнения задач проекта.</p>
+          <h2 class="consult-modal__title" id="consult-title">Поможем выбрать 3D-принтер под ваши задачи</h2>
+          <p class="consult-modal__subtitle">Оставьте номер телефона — наш профильный менеджер уточнит детали ваших задач, поможет подобрать оптимальную модель и оперативно подготовит коммерческое предложение.</p>
 
           <form class="consult-form" data-consult-form action="/send.php" method="POST" novalidate>
             <input type="hidden" name="form_subject" value="Заявка на консультацию" />
             <label class="consult-form__field">
               <span class="consult-form__label">Имя</span>
-              <input class="consult-form__control" type="text" name="user_name" placeholder="Как к вам обращаться" autocomplete="name" />
+              <input class="consult-form__control" type="text" name="user_name" placeholder="Имя (необязательно)" autocomplete="name" />
             </label>
 
             <label class="consult-form__field">
@@ -389,13 +389,13 @@
 
             <div class="legal-consent-wrapper">
               <label class="legal-consent">
-                <input type="checkbox" name="privacy_consent" class="legal-consent__checkbox" required checked>
+                <input type="checkbox" name="privacy_consent" class="legal-consent__checkbox" required>
                 <span class="legal-consent__text">
                   Я даю согласие на обработку персональных данных согласно <a href="/privacy.html" target="_blank">Политике конфиденциальности</a>
                 </span>
               </label>
             </div>
-            <button class="consult-form__button" type="submit">Перезвоните мне</button>
+            <button class="consult-form__button" type="submit">Получить расчет и подборку</button>
             <p class="consult-form__privacy">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
           </form>
         </div>

@@ -4143,3 +4143,76 @@ body.modal-open {
   color: #ffffff !important;
 }
 
+/* =========================================
+ * LEAD FORMS: Button Styling Fix
+ * ========================================= */
+.crm-lead-form button[type="submit"] {
+  width: 100% !important;
+  padding: 16px 24px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  white-space: normal !important;
+  line-height: 1.4 !important;
+  border-radius: 8px !important;
+  background-color: #e50020 !important;
+  color: #ffffff !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: background-color 0.3s ease !important;
+  margin-top: 10px !important;
+}
+
+.crm-lead-form button[type="submit"]:hover {
+  background-color: #c4001a !important;
+}
+
+/* ==========================================
+ * FIX: DARK INPUTS STYLING (CRM FORMS)
+ * ========================================== */
+
+/* Базовое состояние инпутов */
+.crm-lead-form input[type="text"],
+.crm-lead-form input[type="tel"],
+.crm-lead-form .form-control {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  width: 100% !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 8px !important;
+  padding: 14px 18px !important;
+  color: #ffffff !important;
+  font-size: 16px !important;
+  font-family: inherit !important;
+  transition: all 0.3s ease !important;
+  box-sizing: border-box !important;
+  margin-bottom: 12px !important;
+}
+
+/* Стиль плейсхолдера "Имя (необязательно)" */
+.crm-lead-form input::placeholder,
+.crm-lead-form .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.4) !important;
+  font-size: 15px !important;
+}
+
+/* Состояние фокуса (когда юзер нажал на поле) */
+.crm-lead-form input:focus,
+.crm-lead-form .form-control:focus {
+  outline: none !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border-color: #e50020 !important;
+  box-shadow: 0 0 0 4px rgba(229, 0, 32, 0.1) !important;
+}
+
+/* Исправление для автозаполнения (чтобы Chrome не делал поле желтым) */
+.crm-lead-form input:-webkit-autofill,
+.crm-lead-form input:-webkit-autofill:hover,
+.crm-lead-form input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #ffffff !important;
+  -webkit-box-shadow: 0 0 0px 1000px #1a1a1a inset !important;
+  transition: background-color 5000s ease-in-out 0s !important;
+}
+

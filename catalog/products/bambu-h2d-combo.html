@@ -412,16 +412,16 @@
 
       <div class="consult-modal__body" data-consult-state="form">
         <div class="modal__header-text" style="margin-bottom: 20px;">
-          <h3 id="consult-title" style="margin: 0 0 10px 0; font-size: 24px;">Запросить расчет стоимости</h3>
-          <p style="margin: 0; color: rgba(255,255,255,0.7); font-size: 14px;">Оставьте контакты, и наш менеджер подготовит для вас подробный расчет и коммерческое предложение.</p>
+          <h3 id="consult-title" style="margin: 0 0 10px 0; font-size: 24px;">Запросить расчет стоимости и КП</h3>
+          <p style="margin: 0; color: rgba(255,255,255,0.7); font-size: 14px;">Мы подготовим детальную смету на Bambu Lab H2D Combo AMS и предложим оптимальные варианты комплектации.</p>
         </div>
 
         <form action="/send.php" method="POST" class="crm-lead-form" data-consult-form novalidate>
           <input type="hidden" name="form_subject" value="Запрос расчета: Bambu Lab H2D Combo AMS">
 
           <div class="form-group">
-            <label for="product_modal_name">Как к вам обращаться? *</label>
-            <input type="text" id="product_modal_name" name="user_name" class="form-control" required>
+            <label for="product_modal_name">Как к вам обращаться?</label>
+            <input type="text" id="product_modal_name" name="user_name" class="form-control" placeholder="Имя (необязательно)">
           </div>
 
           <div class="form-group">
@@ -431,14 +431,14 @@
 
           <div class="legal-consent-wrapper">
             <label class="legal-consent">
-              <input type="checkbox" name="privacy_consent" class="legal-consent__checkbox" required checked>
+              <input type="checkbox" name="privacy_consent" class="legal-consent__checkbox" required>
               <span class="legal-consent__text">
                 Я даю согласие на обработку персональных данных согласно <a href="/privacy.html" target="_blank">Политике конфиденциальности</a>
               </span>
             </label>
           </div>
 
-          <button type="submit" class="btn btn--red" style="width: 100%; margin-top: 10px;">Получить расчет</button>
+          <button type="submit" class="btn btn--red" style="width: 100%; margin-top: 10px;">Запросить расчет и КП</button>
         </form>
       </div>
     </div>
