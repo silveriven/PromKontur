@@ -687,3 +687,92 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+
+/* =========================================
+ * LEAD FORMS: AJAX Submit & Validation
+ * ========================================= */
+document.addEventListener("DOMContentLoaded", () => {
+    // Находим все формы на сайте
+    const forms = document.querySelectorAll("form");
+
+    forms.forEach((form) => {
+        // Игнорируем форму поиска (у нее action ведет на каталог)
+        if (
+            form.classList.contains("header__search") ||
+            form.classList.contains("header__search-compact") ||
+            form.classList.contains("header__search-mobile")
+        ) {
+            return;
+        }
+
+        form.addEventListener("submit", async (e) => {
+            // Уважаем уже существующую валидацию формы, если она отменила submit ранее.
+            if (e.defaultPrevented) {
+                return;
+            }
+
+            e.preventDefault(); // Останавливаем стандартную отправку
+
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn ? submitBtn.textContent : "Отправить";
+            const phoneInput = form.querySelector('input[name="user_phone"]');
+            const submitUrl = form.getAttribute("action") || "/send.php";
+
+            // Базовая фронтенд-валидация телефона (хотя бы 10 символов)
+            if (phoneInput && phoneInput.value.replace(/\D/g, "").length < 10) {
+                alert("Пожалуйста, введите корректный номер телефона.");
+                return;
+            }
+
+            // Меняем текст кнопки на время загрузки
+            if (submitBtn) {
+                submitBtn.textContent = "Отправка...";
+                submitBtn.disabled = true;
+            }
+
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch(submitUrl, {
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        Accept: "application/json"
+                    }
+                });
+
+                // Проверяем статус-коды от нашего нового безопасного бэкенда
+                if (response.status === 429) {
+                    alert("Вы отправляете заявки слишком часто. Подождите 30 секунд.");
+                    resetButton(submitBtn, originalBtnText);
+                    return;
+                }
+
+                if (!response.ok) {
+                    throw new Error(`Ошибка сервера: ${response.status}`);
+                }
+
+                const result = await response.json();
+
+                if (result.status === "success") {
+                    // Успех! Делаем клиентский редирект на страницу "Спасибо"
+                    window.location.href = "/success.html";
+                } else {
+                    alert("Произошла ошибка при отправке: " + (result.message || "Неизвестная ошибка"));
+                    resetButton(submitBtn, originalBtnText);
+                }
+            } catch (error) {
+                console.error("Ошибка Fetch:", error);
+                alert("Не удалось отправить заявку. Проверьте подключение к интернету.");
+                resetButton(submitBtn, originalBtnText);
+            }
+        });
+    });
+
+    function resetButton(btn, text) {
+        if (btn) {
+            btn.textContent = text;
+            btn.disabled = false;
+        }
+    }
+});
