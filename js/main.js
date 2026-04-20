@@ -324,6 +324,10 @@ if (quizModal && quizForm && quizSteps.length) {
 
     const requiredFields = currentStep.querySelectorAll("input[required]");
     return Array.from(requiredFields).every((field) => {
+      if (field instanceof HTMLInputElement && (field.type === "checkbox" || field.type === "radio")) {
+        return field.checked;
+      }
+
       if (field.hasAttribute("data-consult-phone")) {
         return field.value.replace(/\D/g, "").length >= 11;
       }
@@ -716,7 +720,19 @@ document.addEventListener("DOMContentLoaded", () => {
             const submitBtn = form.querySelector('button[type="submit"]');
             const originalBtnText = submitBtn ? submitBtn.textContent : "Отправить";
             const phoneInput = form.querySelector('input[name="user_phone"]');
+            const privacyConsentInput = form.querySelector('input[name="privacy_consent"]');
             const submitUrl = form.getAttribute("action") || "/send.php";
+
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            if (privacyConsentInput && !privacyConsentInput.checked) {
+                privacyConsentInput.reportValidity();
+                privacyConsentInput.focus();
+                return;
+            }
 
             // Базовая фронтенд-валидация телефона (хотя бы 10 символов)
             if (phoneInput && phoneInput.value.replace(/\D/g, "").length < 10) {
@@ -753,10 +769,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
 
                 const result = await response.json();
+                const isSuccessfulSubmit =
+                    response.status === 200 &&
+                    (result.success === true || result.status === "success");
 
-                if (result.status === "success") {
+                if (isSuccessfulSubmit) {
                     // Успех! Делаем клиентский редирект на страницу "Спасибо"
-                    window.location.href = "/success.html";
+                    window.location.href = "/thanks.html";
                 } else {
                     alert("Произошла ошибка при отправке: " + (result.message || "Неизвестная ошибка"));
                     resetButton(submitBtn, originalBtnText);

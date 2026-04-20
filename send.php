@@ -152,6 +152,7 @@ $formSubject = sanitizeText($_POST['form_subject'] ?? 'New lead from website', 1
 $company = sanitizeText($_POST['company'] ?? '', 160);
 $email = trim((string) ($_POST['email'] ?? ''));
 $comment = sanitizeText($_POST['comment'] ?? '', 500);
+$privacyConsent = trim((string) ($_POST['privacy_consent'] ?? ''));
 
 $phoneDigits = preg_replace('/\D/', '', $phone) ?? '';
 
@@ -159,6 +160,13 @@ if ($phoneDigits === '' || strlen($phoneDigits) < 10) {
     jsonResponse(422, [
         'status' => 'error',
         'message' => 'Invalid phone number.',
+    ]);
+}
+
+if ($privacyConsent === '') {
+    jsonResponse(422, [
+        'status' => 'error',
+        'message' => 'Privacy consent is required.',
     ]);
 }
 
@@ -207,4 +215,5 @@ $_SESSION['last_submit'] = time();
 
 jsonResponse(200, [
     'status' => 'success',
+    'success' => true,
 ]);
