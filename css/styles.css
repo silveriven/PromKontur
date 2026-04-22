@@ -2280,6 +2280,39 @@ body.modal-open {
   line-height: 1.55;
 }
 
+/* Умные буллиты для карточек принтеров */
+.product-card__features {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.product-card__features li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 14px;
+  color: rgba(22, 24, 29, 0.72);
+  line-height: 1.45;
+}
+
+.product-card__features li strong {
+  color: #16181d;
+  font-weight: 600;
+}
+
+.product-card__features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--color-accent-hot);
+  font-size: 15px;
+  font-weight: 900;
+}
+
 .product-card__price {
   margin: 20px 0 0;
   color: #16181d;

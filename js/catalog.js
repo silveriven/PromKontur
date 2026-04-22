@@ -8,6 +8,17 @@ const brandState = document.querySelector("[data-brand-state]");
 let activeBrandFilter = "all";
 
 const normalizeSearchValue = (value) => value.trim().toLowerCase();
+const isPageNavigationLink = (link) => {
+  const href = link.getAttribute("href");
+  if (!href || href === "#" || href.startsWith("javascript:")) return false;
+
+  try {
+    const targetUrl = new URL(href, window.location.href);
+    return targetUrl.pathname !== window.location.pathname;
+  } catch {
+    return false;
+  }
+};
 
 const getItemBrand = (item) => normalizeSearchValue(item.dataset.searchBrand || "");
 
@@ -117,6 +128,7 @@ brandFilterLinks.forEach((link) => {
   link.addEventListener("click", (event) => {
     const filter = link.getAttribute("data-brand-filter");
     if (!filter) return;
+    if (isPageNavigationLink(link)) return;
 
     event.preventDefault();
     activeBrandFilter = filter;
