@@ -3,30 +3,46 @@
  * ========================================= */
 
 /* =========================================
- * SMART HEADER: Hide Top-Bar on Scroll Down
+ * SMART HEADER: Hide Header on Scroll Down
  * ========================================= */
 const header = document.querySelector(".site-header");
-const headerElement = document.querySelector(".site-header");
 const headerBurger = document.querySelector(".header__burger");
 const headerNav = document.querySelector(".header__nav");
 const mobileNavBreakpoint = 900;
 let lastScrollTop = 0;
+const headerScrollThreshold = 100;
 
-if (headerElement) {
+function isAnyModalOpen() {
+  return Boolean(document.querySelector(".quiz-modal.is-open, .consult-modal.is-open"));
+}
+
+function syncBodyScrollLock() {
+  const isMenuOpen = Boolean(headerNav?.classList.contains("nav-active"));
+  const isModalOpen = isAnyModalOpen();
+  const shouldLockBody = isMenuOpen || isModalOpen;
+
+  document.body.classList.toggle("no-scroll", shouldLockBody);
+  document.body.classList.toggle("modal-open", isModalOpen);
+}
+
+if (header) {
   window.addEventListener("scroll", () => {
-    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    const currentScroll = Math.max(window.pageYOffset || document.documentElement.scrollTop, 0);
+    const isMenuOpen = header.classList.contains("menu-open") || headerNav?.classList.contains("nav-active");
 
-    if (window.innerWidth > 900) {
-      if (currentScroll > lastScrollTop && currentScroll > 50) {
-        headerElement.classList.add("hide-top-bar");
-      } else {
-        headerElement.classList.remove("hide-top-bar");
-      }
-    } else {
-      headerElement.classList.remove("hide-top-bar");
+    if (isMenuOpen || currentScroll <= headerScrollThreshold) {
+      header.classList.remove("header--hidden");
+      lastScrollTop = currentScroll;
+      return;
     }
 
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    if (currentScroll > lastScrollTop) {
+      header.classList.add("header--hidden");
+    } else if (currentScroll < lastScrollTop) {
+      header.classList.remove("header--hidden");
+    }
+
+    lastScrollTop = currentScroll;
   }, { passive: true });
 }
 
@@ -38,9 +54,10 @@ const syncMenuState = (isOpen) => {
   header.classList.toggle("menu-open", isOpen);
   headerNav.classList.toggle("nav-active", isOpen);
   headerBurger.classList.toggle("burger-active", isOpen);
-  document.body.classList.toggle("no-scroll", isOpen);
+  header.classList.toggle("header--hidden", false);
   headerBurger.setAttribute("aria-expanded", String(isOpen));
   headerBurger.setAttribute("aria-label", isOpen ? "Закрыть меню" : "Открыть меню");
+  syncBodyScrollLock();
 };
 
 if (header && headerBurger && headerNav) {
@@ -221,8 +238,6 @@ if (trustSection) {
   } else {
     trustSection.classList.add("is-visible");
   }
-
-  const trustLeadButton = trustSection.querySelector(".trust__button");
 }
 
 /* =========================================
@@ -240,6 +255,12 @@ const quizNextButton = quizModal ? quizModal.querySelector("[data-quiz-next]") :
 const quizSubmitButton = quizModal ? quizModal.querySelector("[data-quiz-submit]") : null;
 const consultForm = document.querySelector("[data-consult-form]");
 const phoneMaskInputs = document.querySelectorAll("[data-consult-phone]");
+const consultModalTitle = consultModal ? consultModal.querySelector("[data-consult-title]") : null;
+const consultModalSubtitle = consultModal ? consultModal.querySelector("[data-consult-subtitle]") : null;
+const consultModalSubmit = consultForm ? consultForm.querySelector("[data-consult-submit]") : null;
+const consultModalSubject = consultForm ? consultForm.querySelector("[data-consult-subject]") : null;
+const consultModalCommentField = consultForm ? consultForm.querySelector("[data-consult-comment-field]") : null;
+const consultModalCommentInput = consultForm ? consultForm.querySelector('textarea[name="user_comment"]') : null;
 let quizCurrentStep = 0;
 let updateQuizUi = () => {};
 let isQuizStepComplete = () => false;
@@ -249,21 +270,70 @@ const modalRegistry = {
   "consult-modal": consultModal,
 };
 
+Object.values(modalRegistry).forEach((modal) => {
+  if (!modal || document.body.lastElementChild === modal) return;
+  document.body.append(modal);
+});
+
 const closeModal = (modalId) => {
   const modal = modalRegistry[modalId];
   if (!modal) return;
 
   modal.classList.remove("is-open");
   modal.setAttribute("aria-hidden", "true");
+  syncBodyScrollLock();
+};
 
-  if (!document.querySelector(".quiz-modal.is-open, .consult-modal.is-open")) {
-    document.body.classList.remove("modal-open");
+const syncConsultModalVariant = (trigger) => {
+  if (
+    !consultModal ||
+    !consultForm ||
+    !consultModalTitle ||
+    !consultModalSubtitle ||
+    !consultModalSubmit ||
+    !consultModalSubject
+  ) {
+    return;
+  }
+
+  if (!consultModal.dataset.defaultTitle) {
+    consultModal.dataset.defaultTitle = consultModalTitle.textContent.trim();
+    consultModal.dataset.defaultSubtitle = consultModalSubtitle.textContent.trim();
+    consultModal.dataset.defaultSubmit = consultModalSubmit.textContent.trim();
+    consultModal.dataset.defaultSubject = consultModalSubject.value;
+  }
+
+  const isQuestionMode = trigger?.dataset.consultMode === "question";
+
+  consultModalTitle.textContent = isQuestionMode
+    ? "Задать вопрос менеджеру"
+    : consultModal.dataset.defaultTitle;
+  consultModalSubtitle.textContent = isQuestionMode
+    ? "Напишите ваш вопрос или опишите задачу, и наш специалист свяжется с вами для ее оперативного решения."
+    : consultModal.dataset.defaultSubtitle;
+  consultModalSubmit.textContent = isQuestionMode
+    ? "Отправить вопрос"
+    : consultModal.dataset.defaultSubmit;
+  consultModalSubject.value = isQuestionMode
+    ? "Вопрос менеджеру"
+    : consultModal.dataset.defaultSubject;
+
+  if (consultModalCommentField) {
+    consultModalCommentField.hidden = !isQuestionMode;
+  }
+
+  if (consultModalCommentInput && !isQuestionMode) {
+    consultModalCommentInput.value = "";
   }
 };
 
-const openModal = (modalId) => {
+const openModal = (modalId, trigger = null) => {
   const modal = modalRegistry[modalId];
   if (!modal) return;
+
+  if (headerNav?.classList.contains("nav-active")) {
+    syncMenuState(false);
+  }
 
   Object.entries(modalRegistry).forEach(([key, entry]) => {
     if (!entry || key === modalId) return;
@@ -278,11 +348,12 @@ const openModal = (modalId) => {
 
   if (modalId === "consult-modal" && consultForm) {
     consultForm.reset();
+    syncConsultModalVariant(trigger);
   }
 
   modal.classList.add("is-open");
   modal.setAttribute("aria-hidden", "false");
-  document.body.classList.add("modal-open");
+  syncBodyScrollLock();
 };
 
 if (quizModal && quizForm && quizSteps.length) {
@@ -378,7 +449,7 @@ if (modalOpenButtons.length) {
       const modalId = button.getAttribute("data-modal");
       if (!modalId) return;
       event.preventDefault();
-      openModal(modalId);
+      openModal(modalId, button);
     });
   });
 }
@@ -621,75 +692,38 @@ if (initialActiveButton) {
   }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    // 1. Проверяем, есть ли уже запись в памяти браузера
-    if (!localStorage.getItem("promcontur_cookie_accepted")) {
-        
-        // 2. Создаем контейнер для баннера
-        const cookieBanner = document.createElement("div");
-        cookieBanner.id = "system-cookie-banner";
-        
-        // 3. Задаем жесткие стили (Glassmorphism, темная тема)
-        cookieBanner.style.cssText = `
-            position: fixed !important;
-            bottom: 0 !important;
-            left: 0 !important;
-            width: 100% !important;
-            background-color: rgba(15, 15, 15, 0.95) !important;
-            backdrop-filter: blur(10px) !important;
-            -webkit-backdrop-filter: blur(10px) !important;
-            border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
-            padding: 16px 24px !important;
-            display: flex !important;
-            justify-content: space-between !important;
-            align-items: center !important;
-            flex-wrap: wrap !important;
-            gap: 16px !important;
-            z-index: 2147483647 !important; /* Максимально возможный z-index */
-            box-sizing: border-box !important;
-            font-family: inherit !important;
-            box-shadow: 0 -4px 20px rgba(0,0,0,0.5) !important;
-        `;
+const COOKIE_BANNER_STORAGE_KEY = "promcontur_cookie_accepted";
+const COOKIE_BANNER_TRANSITION_MS = 400;
 
-        // 4. Вставляем текст и кнопку
-        cookieBanner.innerHTML = `
-            <div style="flex: 1 1 280px; font-size: 14px; line-height: 1.5; color: #e0e0e0; margin: 0;">
-                Мы используем файлы cookie для улучшения работы сайта и аналитики. Продолжая работу, вы соглашаетесь с нашей 
-                <a href="/privacy.html" style="color: #ffffff; text-decoration: underline; transition: color 0.3s;">Политикой конфиденциальности</a>.
-            </div>
-            <button id="cookie-accept-btn" style="
-                background-color: #e50020; 
-                color: #ffffff; 
-                border: none; 
-                padding: 12px 28px; 
-                border-radius: 6px; 
-                cursor: pointer; 
-                font-size: 14px;
-                font-weight: 600; 
-                white-space: nowrap;
-                transition: background-color 0.3s;
-                margin: 0;
-            ">Понятно, принять</button>
-        `;
+document.addEventListener("DOMContentLoaded", () => {
+  if (localStorage.getItem(COOKIE_BANNER_STORAGE_KEY)) {
+    return;
+  }
 
-        // 5. Выводим баннер на экран
-        document.body.appendChild(cookieBanner);
+  const cookieBanner = document.createElement("div");
+  cookieBanner.id = "system-cookie-banner";
+  cookieBanner.className = "system-cookie-banner";
 
-        // 6. Логика кнопки "Принять"
-        const acceptBtn = document.getElementById("cookie-accept-btn");
-        
-        // Эффект наведения для кнопки (т.к. псевдоклассы не работают в inline-стилях)
-        acceptBtn.addEventListener("mouseenter", () => acceptBtn.style.backgroundColor = "#c4001a");
-        acceptBtn.addEventListener("mouseleave", () => acceptBtn.style.backgroundColor = "#e50020");
+  cookieBanner.innerHTML = `
+    <p class="system-cookie-banner__text">
+      Мы используем файлы cookie для улучшения работы сайта и аналитики. Продолжая работу, вы соглашаетесь с нашей
+      <a class="system-cookie-banner__link" href="/privacy.html">Политикой конфиденциальности</a>.
+    </p>
+    <button id="cookie-accept-btn" class="system-cookie-banner__button">Понятно, принять</button>
+  `;
 
-        // Обработка клика
-        acceptBtn.addEventListener("click", function() {
-            localStorage.setItem("promcontur_cookie_accepted", "true");
-            cookieBanner.style.opacity = "0";
-            cookieBanner.style.transition = "opacity 0.4s ease";
-            setTimeout(() => cookieBanner.remove(), 400); // Плавное исчезновение
-        });
-    }
+  document.body.appendChild(cookieBanner);
+
+  const acceptBtn = document.getElementById("cookie-accept-btn");
+  if (!acceptBtn) {
+    return;
+  }
+
+  acceptBtn.addEventListener("click", () => {
+    localStorage.setItem(COOKIE_BANNER_STORAGE_KEY, "true");
+    cookieBanner.classList.add("is-hidden");
+    window.setTimeout(() => cookieBanner.remove(), COOKIE_BANNER_TRANSITION_MS);
+  });
 });
 
 /* =========================================

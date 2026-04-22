@@ -151,7 +151,7 @@ $phone = sanitizePhone($_POST['user_phone'] ?? '');
 $formSubject = sanitizeText($_POST['form_subject'] ?? 'New lead from website', 160);
 $company = sanitizeText($_POST['company'] ?? '', 160);
 $email = trim((string) ($_POST['email'] ?? ''));
-$comment = sanitizeText($_POST['comment'] ?? '', 500);
+$comment = sanitizeText($_POST['comment'] ?? ($_POST['user_comment'] ?? ''), 500);
 $privacyConsent = trim((string) ($_POST['privacy_consent'] ?? ''));
 
 $phoneDigits = preg_replace('/\D/', '', $phone) ?? '';

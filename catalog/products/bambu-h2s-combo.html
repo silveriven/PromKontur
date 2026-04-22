@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Bambu Lab H2S Combo | ПромКонтур</title>
+  <title>3D-принтер Bambu Lab H2S Combo | ПромКонтур</title>
   <link rel="icon" type="image/png" href="../../assets/favicon.png">
   <link rel="stylesheet" href="../../css/styles.css" />
 </head>
@@ -50,7 +50,7 @@
         </form>
 
         <ul class="header__nav-list">
-          <li class="header__menu-item mobile-only"><a class="header__link" href="../../catalog/index.html" style="color: #e50020;">&#1042;&#1089;&#1077; &#1090;&#1086;&#1074;&#1072;&#1088;&#1099; &#1082;&#1072;&#1090;&#1072;&#1083;&#1086;&#1075;&#1072;</a></li>
+          <li class="header__menu-item mobile-only"><a class="header__link text-accent" href="../../catalog/index.html">&#1042;&#1089;&#1077; &#1090;&#1086;&#1074;&#1072;&#1088;&#1099; &#1082;&#1072;&#1090;&#1072;&#1083;&#1086;&#1075;&#1072;</a></li>
           <li class="header__menu-item"><a class="header__link" href="../../delivery.html">&#1044;&#1086;&#1089;&#1090;&#1072;&#1074;&#1082;&#1072; &#1080; &#1086;&#1087;&#1083;&#1072;&#1090;&#1072;</a></li>
           <li class="header__menu-item"><a class="header__link" href="../../about.html">&#1054; &#1082;&#1086;&#1084;&#1087;&#1072;&#1085;&#1080;&#1080;</a></li>
           <li class="header__menu-item"><a class="header__link" href="../../b2b.html">&#1044;&#1083;&#1103; &#1102;&#1088;. &#1083;&#1080;&#1094;</a></li>
@@ -152,9 +152,10 @@
           </ul>
 
           <div class="product-hero__actions">
-            <a class="btn btn--primary" href="#consult-modal" data-modal="consult-modal">Рассчитать стоимость доставки</a>
-            <a class="btn btn--secondary" href="#consult-modal" data-modal="consult-modal">Задать вопрос менеджеру</a>
+            <a class="btn btn--primary" href="#consult-modal" data-modal="consult-modal" data-consult-mode="quote">Рассчитать стоимость доставки</a>
+            <a class="btn btn--secondary" href="#consult-modal" data-modal="consult-modal" data-consult-mode="question">Задать вопрос менеджеру</a>
           </div>
+          <p class="product-hero__sales-note">✓ Работаем с физическими и юридическими лицами</p>
         </div>
       </section>
 
@@ -215,9 +216,9 @@
 
         <div class="product-tabs__panel" data-product-panel="description" hidden>
           <div class="product-copy">
-            <p><strong>Bambu Lab H2S Combo</strong> рассчитан на инженерные отделы и производственные команды, которым нужен закрытый FDM-принтер с высокой скоростью, полной автоматической калибровкой и стабильной работой с техническими материалами.</p>
-            <p>Конфигурация <strong>Combo с AMS</strong> добавляет герметичный модуль на 4 катушки с активным контролем влажности, RFID-считывателем и автоматической сменой материала, что удобно для многоматериальной печати и серийных задач.</p>
-            <p>Модель поддерживает удалённое управление через <strong>Wi-Fi, Bluetooth, LAN и MicroSD</strong>, оснащена AI-камерой 1080p и подходит для B2B-поставки с услугой <strong>Доставка ТК на производство</strong>.</p>
+            <p><strong>Bambu Lab H2S Combo</strong> — закрытый 3D-принтер для тех, кому нужны высокая скорость, автоматическая калибровка и стабильная печать на каждый день.</p>
+            <p>Конфигурация <strong>Combo с AMS</strong> добавляет герметичный модуль на 4 катушки с контролем влажности и автоматической сменой материала, что особенно удобно для многоцветных проектов и печати несколькими пластиками без постоянной ручной замены.</p>
+            <p>Модель подойдёт для мастерской, студии прототипирования, малого бизнеса и всех, кто хочет спокойно печатать ABS, ASA, PETG и другие популярные материалы без долгой настройки.</p>
           </div>
         </div>
 
@@ -382,22 +383,27 @@
       </button>
 
       <div class="consult-modal__body" data-consult-state="form">
-        <div class="modal__header-text" style="margin-bottom: 20px;">
-          <h3 id="consult-title" style="margin: 0 0 10px 0; font-size: 24px;">Запросить расчет стоимости и КП</h3>
-          <p style="margin: 0; color: rgba(255,255,255,0.7); font-size: 14px;">Мы подготовим детальную смету на Bambu Lab H2S Combo и предложим оптимальные варианты комплектации.</p>
+        <div class="consult-modal__header">
+          <h3 class="consult-modal__heading" id="consult-title" data-consult-title>Запросить расчет стоимости</h3>
+          <p class="consult-modal__subheading" data-consult-subtitle>Подготовим цену на Bambu Lab H2S Combo и поможем выбрать подходящую комплектацию.</p>
         </div>
 
         <form action="/send.php" method="POST" class="crm-lead-form" data-consult-form novalidate>
-          <input type="hidden" name="form_subject" value="Запрос расчета: Bambu Lab H2S Combo">
+          <input type="hidden" name="form_subject" value="Запрос расчета: Bambu Lab H2S Combo" data-consult-subject>
 
-          <div class="form-group">
+          <div class="form-group consult-form__field">
             <label for="product_modal_name">Как к вам обращаться?</label>
-            <input type="text" id="product_modal_name" name="user_name" class="form-control" placeholder="Имя (необязательно)">
+            <input type="text" id="product_modal_name" name="user_name" class="form-control consult-form__control" placeholder="Имя (необязательно)">
           </div>
 
-          <div class="form-group">
+          <div class="form-group consult-form__field">
             <label for="product_modal_phone">Контактный телефон *</label>
-            <input type="tel" id="product_modal_phone" name="user_phone" class="form-control" placeholder="+7 999 123-45-67" required data-consult-phone>
+            <input type="tel" id="product_modal_phone" name="user_phone" class="form-control consult-form__control" placeholder="+7 999 123-45-67" required data-consult-phone>
+          </div>
+
+          <div class="form-group consult-form__field" data-consult-comment-field hidden>
+            <label for="product_modal_comment">Ваш вопрос или комментарий</label>
+            <textarea id="product_modal_comment" name="user_comment" class="form-control consult-form__control" placeholder="Ваш вопрос или комментарий" rows="3"></textarea>
           </div>
 
           <div class="legal-consent-wrapper">
@@ -409,7 +415,7 @@
             </label>
           </div>
 
-          <button type="submit" class="btn btn--red" style="width: 100%; margin-top: 10px;">Запросить расчет и КП</button>
+          <button type="submit" class="btn btn--red consult-modal__submit" data-consult-submit>Запросить расчет стоимости</button>
         </form>
       </div>
     </div>

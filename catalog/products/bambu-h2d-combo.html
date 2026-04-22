@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Bambu Lab H2D Combo AMS | ПромКонтур</title>
+  <title>3D-принтер Bambu Lab H2D Combo AMS | ПромКонтур</title>
   <link rel="icon" type="image/png" href="../../assets/favicon.png">
   <link rel="stylesheet" href="../../css/styles.css" />
 </head>
@@ -50,7 +50,7 @@
         </form>
 
         <ul class="header__nav-list">
-          <li class="header__menu-item mobile-only"><a class="header__link" href="../../catalog/index.html" style="color: #e50020;">&#1042;&#1089;&#1077; &#1090;&#1086;&#1074;&#1072;&#1088;&#1099; &#1082;&#1072;&#1090;&#1072;&#1083;&#1086;&#1075;&#1072;</a></li>
+          <li class="header__menu-item mobile-only"><a class="header__link text-accent" href="../../catalog/index.html">&#1042;&#1089;&#1077; &#1090;&#1086;&#1074;&#1072;&#1088;&#1099; &#1082;&#1072;&#1090;&#1072;&#1083;&#1086;&#1075;&#1072;</a></li>
           <li class="header__menu-item"><a class="header__link" href="../../delivery.html">&#1044;&#1086;&#1089;&#1090;&#1072;&#1074;&#1082;&#1072; &#1080; &#1086;&#1087;&#1083;&#1072;&#1090;&#1072;</a></li>
           <li class="header__menu-item"><a class="header__link" href="../../about.html">&#1054; &#1082;&#1086;&#1084;&#1087;&#1072;&#1085;&#1080;&#1080;</a></li>
           <li class="header__menu-item"><a class="header__link" href="../../b2b.html">&#1044;&#1083;&#1103; &#1102;&#1088;. &#1083;&#1080;&#1094;</a></li>
@@ -155,21 +155,12 @@
             <p class="product-hero__price" id="product-price">199 000,00 &#8381;</p>
           </div>
 
-          <div class="version-toggle" style="display: flex; gap: 8px; margin-bottom: 24px;">
-            <button
-              id="version-eu"
-              type="button"
-              style="min-height: 46px; padding: 0 18px; border-radius: 999px; border: 1px solid #d3001a; background: #d3001a; color: #fff; font-size: 14px; font-weight: 650; cursor: pointer;"
-            >
-              EU
-            </button>
-            <button
-              id="version-cn"
-              type="button"
-              style="min-height: 46px; padding: 0 18px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.08); background: rgba(255, 255, 255, 0.03); color: rgba(255, 255, 255, 0.76); font-size: 14px; font-weight: 650; cursor: pointer;"
-            >
-              CN
-            </button>
+          <div class="product-version-toggle" aria-label="Версия поставки">
+            <span class="product-version-toggle__label">Версия поставки</span>
+            <div class="product-version-toggle__buttons">
+              <button id="version-eu" class="product-tabs__button is-active" type="button">EU</button>
+              <button id="version-cn" class="product-tabs__button" type="button">CN</button>
+            </div>
           </div>
 
           <div class="product-hero__config" aria-label="Выбор комплектации">
@@ -185,9 +176,10 @@
           </ul>
 
           <div class="product-hero__actions">
-            <a class="btn btn--primary" href="#consult-modal" data-modal="consult-modal">Рассчитать стоимость доставки</a>
-            <a class="btn btn--secondary" href="#consult-modal" data-modal="consult-modal">Задать вопрос менеджеру</a>
+            <a class="btn btn--primary" href="#consult-modal" data-modal="consult-modal" data-consult-mode="quote">Рассчитать стоимость доставки</a>
+            <a class="btn btn--secondary" href="#consult-modal" data-modal="consult-modal" data-consult-mode="question">Задать вопрос менеджеру</a>
           </div>
+          <p class="product-hero__sales-note">✓ Работаем с физическими и юридическими лицами</p>
         </div>
       </section>
 
@@ -248,9 +240,9 @@
 
         <div class="product-tabs__panel" data-product-panel="description" hidden>
           <div class="product-copy">
-            <p><strong>Bambu Lab H2D Combo AMS</strong> рассчитан на инженерные отделы и производственные команды, которым нужен закрытый FDM-принтер с двухсопельной архитектурой, высокой скоростью печати и стабильным термоконтуром.</p>
-            <p>Конфигурация <strong>Combo с AMS</strong> добавляет систему подачи <strong>AMS Full Combo до 4 катушек</strong>, что удобно для рабочих материалов, быстрых переключений и серийных сценариев на производстве.</p>
-            <p>Модель подходит для B2B-поставки с запуском на площадке клиента, когда критичны крупная рабочая область, активный подогрев камеры и высокая производительность печати.</p>
+            <p><strong>Bambu Lab H2D Combo AMS</strong> — мощный 3D-принтер с двумя соплами, большим рабочим полем и высокой скоростью печати для тех, кто хочет больше гибкости в одном устройстве.</p>
+            <p>Конфигурация <strong>Combo с AMS</strong> добавляет систему подачи <strong>AMS Full Combo до 4 катушек</strong>, поэтому можно удобнее переключаться между материалами и запускать длинные задания с меньшим количеством ручных действий.</p>
+            <p>Модель хорошо подойдёт для мастерских, студий и небольших команд, которым нужны крупные детали, закрытая камера и стабильная работа на сложных проектах.</p>
           </div>
         </div>
 
@@ -311,7 +303,7 @@
                 </div>
                 <div class="product-specs__row">
                   <dt class="product-specs__term">Макс. ускорение</dt>
-                  <dd class="product-specs__value">Высокоскоростной режим для производственных циклов</dd>
+                  <dd class="product-specs__value">Высокоскоростной режим для длинных и интенсивных заданий</dd>
                 </div>
                 <div class="product-specs__row">
                   <dt class="product-specs__term">Видеокамера</dt>
@@ -357,7 +349,7 @@
               <dl class="product-specs__table">
                 <div class="product-specs__row">
                   <dt class="product-specs__term">Габариты и вес</dt>
-                  <dd class="product-specs__value">Промышленный настольный формат с рабочей областью 350 x 320 x 325 мм и закрытым корпусом для инженерных задач</dd>
+                  <dd class="product-specs__value">Крупный настольный формат с рабочей областью 350 x 320 x 325 мм и закрытым корпусом для сложных проектов</dd>
                 </div>
               </dl>
             </section>
@@ -411,22 +403,27 @@
       </button>
 
       <div class="consult-modal__body" data-consult-state="form">
-        <div class="modal__header-text" style="margin-bottom: 20px;">
-          <h3 id="consult-title" style="margin: 0 0 10px 0; font-size: 24px;">Запросить расчет стоимости и КП</h3>
-          <p style="margin: 0; color: rgba(255,255,255,0.7); font-size: 14px;">Мы подготовим детальную смету на Bambu Lab H2D Combo AMS и предложим оптимальные варианты комплектации.</p>
+        <div class="consult-modal__header">
+          <h3 class="consult-modal__heading" id="consult-title" data-consult-title>Запросить расчет стоимости</h3>
+          <p class="consult-modal__subheading" data-consult-subtitle>Подготовим цену на Bambu Lab H2D Combo AMS и поможем выбрать оптимальную комплектацию.</p>
         </div>
 
         <form action="/send.php" method="POST" class="crm-lead-form" data-consult-form novalidate>
-          <input type="hidden" name="form_subject" value="Запрос расчета: Bambu Lab H2D Combo AMS">
+          <input type="hidden" name="form_subject" value="Запрос расчета: Bambu Lab H2D Combo AMS" data-consult-subject>
 
-          <div class="form-group">
+          <div class="form-group consult-form__field">
             <label for="product_modal_name">Как к вам обращаться?</label>
-            <input type="text" id="product_modal_name" name="user_name" class="form-control" placeholder="Имя (необязательно)">
+            <input type="text" id="product_modal_name" name="user_name" class="form-control consult-form__control" placeholder="Имя (необязательно)">
           </div>
 
-          <div class="form-group">
+          <div class="form-group consult-form__field">
             <label for="product_modal_phone">Контактный телефон *</label>
-            <input type="tel" id="product_modal_phone" name="user_phone" class="form-control" placeholder="+7 999 123-45-67" required data-consult-phone>
+            <input type="tel" id="product_modal_phone" name="user_phone" class="form-control consult-form__control" placeholder="+7 999 123-45-67" required data-consult-phone>
+          </div>
+
+          <div class="form-group consult-form__field" data-consult-comment-field hidden>
+            <label for="product_modal_comment">Ваш вопрос или комментарий</label>
+            <textarea id="product_modal_comment" name="user_comment" class="form-control consult-form__control" placeholder="Ваш вопрос или комментарий" rows="3"></textarea>
           </div>
 
           <div class="legal-consent-wrapper">
@@ -438,7 +435,7 @@
             </label>
           </div>
 
-          <button type="submit" class="btn btn--red" style="width: 100%; margin-top: 10px;">Запросить расчет и КП</button>
+          <button type="submit" class="btn btn--red consult-modal__submit" data-consult-submit>Запросить расчет стоимости</button>
         </form>
       </div>
     </div>
@@ -497,26 +494,10 @@
 
       if (!price || !euButton || !cnButton) return;
 
-      const activeStyle = {
-        border: "1px solid #d3001a",
-        background: "#d3001a",
-        color: "#fff"
-      };
-
-      const inactiveStyle = {
-        border: "1px solid rgba(255, 255, 255, 0.08)",
-        background: "rgba(255, 255, 255, 0.03)",
-        color: "rgba(255, 255, 255, 0.76)"
-      };
-
       const applyState = (activeButton, inactiveButton, nextPrice) => {
         price.innerHTML = nextPrice;
-        activeButton.style.border = activeStyle.border;
-        activeButton.style.background = activeStyle.background;
-        activeButton.style.color = activeStyle.color;
-        inactiveButton.style.border = inactiveStyle.border;
-        inactiveButton.style.background = inactiveStyle.background;
-        inactiveButton.style.color = inactiveStyle.color;
+        activeButton.classList.add("is-active");
+        inactiveButton.classList.remove("is-active");
       };
 
       euButton.addEventListener("click", () => {

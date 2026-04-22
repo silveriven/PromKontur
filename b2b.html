@@ -54,7 +54,7 @@
         </form>
 
         <ul class="header__nav-list">
-          <li class="header__menu-item mobile-only"><a class="header__link" href="catalog/index.html" style="color: #e50020;">&#1042;&#1089;&#1077; &#1090;&#1086;&#1074;&#1072;&#1088;&#1099; &#1082;&#1072;&#1090;&#1072;&#1083;&#1086;&#1075;&#1072;</a></li>
+          <li class="header__menu-item mobile-only"><a class="header__link text-accent" href="catalog/index.html">&#1042;&#1089;&#1077; &#1090;&#1086;&#1074;&#1072;&#1088;&#1099; &#1082;&#1072;&#1090;&#1072;&#1083;&#1086;&#1075;&#1072;</a></li>
           <li class="header__menu-item"><a class="header__link" href="delivery.html">&#1044;&#1086;&#1089;&#1090;&#1072;&#1074;&#1082;&#1072; &#1080; &#1086;&#1087;&#1083;&#1072;&#1090;&#1072;</a></li>
           <li class="header__menu-item"><a class="header__link" href="about.html">&#1054; &#1082;&#1086;&#1084;&#1087;&#1072;&#1085;&#1080;&#1080;</a></li>
           <li class="header__menu-item"><a class="header__link" href="b2b.html">&#1044;&#1083;&#1103; &#1102;&#1088;. &#1083;&#1080;&#1094;</a></li>
@@ -175,14 +175,14 @@
           <form action="/send.php" method="POST" class="crm-lead-form">
             <input type="hidden" name="form_subject" value="B2B Заявка юр лица">
 
-            <div class="form-group" style="margin-bottom: 15px;">
-              <input type="text" name="user_name" class="form-control" placeholder="Как к вам обращаться?" style="width: 100%; max-width: 400px; padding: 12px; border-radius: 6px; border: 1px solid #333; background: #1a1a1a; color: #fff;">
+            <div class="form-group crm-lead-form__group">
+              <input type="text" name="user_name" class="form-control" placeholder="Как к вам обращаться?">
             </div>
-            <div class="form-group" style="margin-bottom: 15px;">
-              <input type="tel" name="user_phone" class="form-control" placeholder="Номер телефона *" required style="width: 100%; max-width: 400px; padding: 12px; border-radius: 6px; border: 1px solid #333; background: #1a1a1a; color: #fff;">
+            <div class="form-group crm-lead-form__group">
+              <input type="tel" name="user_phone" class="form-control" placeholder="Номер телефона *" required>
             </div>
 
-            <div class="legal-consent-wrapper" style="max-width: 400px;">
+            <div class="legal-consent-wrapper crm-lead-form__consent">
               <label class="legal-consent">
                 <input type="checkbox" name="privacy_consent" class="legal-consent__checkbox" required>
                 <span class="legal-consent__text">
@@ -191,7 +191,7 @@
               </label>
             </div>
 
-            <button type="submit" class="btn btn--red" style="padding: 12px 30px; border: none; border-radius: 6px; background: #e50020; color: #fff; font-weight: bold; cursor: pointer;">Получить коммерческое предложение</button>
+            <button type="submit" class="btn btn--red crm-lead-form__submit">Получить коммерческое предложение</button>
           </form>
           <a class="btn btn--secondary" href="catalog/brands/bambu-lab.html">Перейти в каталог Bambu Lab</a>
         </div>
